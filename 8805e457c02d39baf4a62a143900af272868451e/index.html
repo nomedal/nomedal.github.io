@@ -169,11 +169,9 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla</li>
 
-<li>Draft of 'New Tiddler'</li>
-
 <li>Hvor ting er:</li>
 
-<li>TEst</li>
+<li>Raspberry PI</li>
 
 </ul>
 </p>
@@ -9397,10 +9395,10 @@ Error message and password prompt
 <div created="20200306195808530" modified="20200306200003779" title="$:/SiteTitle">
 <pre>KLUBBKANEL</pre>
 </div>
-<div created="20200306200828532" modified="20200307071135954" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Open</pre>
+<div created="20200306200828532" modified="20200309083537974" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div list="[[Draft of 'New Tiddler']]" title="$:/StoryList">
+<div created="20200309083200449" list="[[Hvor ting er:]] [[Raspberry PI]]" modified="20200309083545533" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9416,19 +9414,19 @@ Error message and password prompt
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;file:///C:/Users/matsn/Downloads/empty.html&quot;
+            &quot;text&quot;: &quot;https://nomedal.github.io/8805e457c02d39baf4a62a143900af272868451e/index.html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
-            &quot;text&quot;: &quot;&quot;
+            &quot;text&quot;: &quot;nomedal.github.io&quot;
         },
         &quot;$:/info/url/hostname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/hostname&quot;,
-            &quot;text&quot;: &quot;&quot;
+            &quot;text&quot;: &quot;nomedal.github.io&quot;
         },
         &quot;$:/info/url/protocol&quot;: {
             &quot;title&quot;: &quot;$:/info/url/protocol&quot;,
-            &quot;text&quot;: &quot;file:&quot;
+            &quot;text&quot;: &quot;https:&quot;
         },
         &quot;$:/info/url/port&quot;: {
             &quot;title&quot;: &quot;$:/info/url/port&quot;,
@@ -9436,7 +9434,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/C:/Users/matsn/Downloads/empty.html&quot;
+            &quot;text&quot;: &quot;/8805e457c02d39baf4a62a143900af272868451e/index.html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -9444,15 +9442,15 @@ Error message and password prompt
         },
         &quot;$:/info/url/origin&quot;: {
             &quot;title&quot;: &quot;$:/info/url/origin&quot;,
-            &quot;text&quot;: &quot;file://&quot;
+            &quot;text&quot;: &quot;https://nomedal.github.io&quot;
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;1536&quot;
+            &quot;text&quot;: &quot;1920&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;864&quot;
+            &quot;text&quot;: &quot;1080&quot;
         },
         &quot;$:/info/browser/language&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/language&quot;,
@@ -9576,14 +9574,113 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20200307071142064" draft.of="New Tiddler" draft.title="New Tiddler" modified="20200307071142064" tags="" title="Draft of 'New Tiddler'">
-<pre></pre>
+<div created="20200306200609460" description="" modified="20200309083426195" tags="" title="Hvor ting er:" type="text/plain">
+<pre>Husnøkkel: I kaffiskapet
+Tenger: I glassskapet
+</pre>
 </div>
-<div created="20200306200609460" description="" modified="20200306200738184" tags="" title="Hvor ting er:" type="text/plain">
-<pre>Husnøkkel: I kaffiskapet</pre>
-</div>
-<div created="20200306200815960" modified="20200307071034612" tags="" title="TEst">
-<pre></pre>
+<div created="20200307071142064" modified="20200309083854403" tags="" title="Raspberry PI" type="text/plain">
+<pre>update:
+
+    sudo apt-get update
+    sudo apt-get upgrade
+
+check internet:
+
+    ifconfig
+
+ssh to raspberry:
+
+    ssh pi@10.0.0.105 # on LAN
+    ssh pi@805.something # over inter
+
+reboot:
+    sudo reboot
+
+install nordvpn:
+    sudo apt-get install openvpn
+
+setup AP:
+    sudo apt-get install hostapd dnsmasq -y
+
+    sudo systemctl stop hostapd
+    sudo systemctl stop dnsmasq
+
+    sudo nano /etc/dhcpd.conf
+        paste:  interface wlan0
+                static ip_address=10.0.0.105/24
+                denyinterfaces eth0
+                denyinterfaces wlan0
+
+    sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
+    sudo vim /etc/dnsmasq.conf
+        paste:  interface=wlan0
+                dhcp-range=10.0.0.106,10.0.0.180,255.255.255.0,24h
+
+    sudo vim /etc/hostapd/hostapd.conf
+        paste:  
+interface=wlan0
+bridge=br0
+hw_mode=g
+channel=7
+wmm_enabled=0
+macaddr_acl=0
+auth_algs=1
+ignore_broadcast_ssid=0
+wpa=2
+wpa_key_mgmt=WPA-PSK
+wpa_pairwise=TKIP
+rsn_pairwise=CCMP
+ssid=kaneltest
+wpa_passphrase=32213221
+
+    sudo vim /etc/default/hostapd
+        unhash: DAEMON_CONF=&quot;/etc/hostapd/hostapd.conf&quot;
+
+    sudo vim /etc/sysctl.conf
+        unhash: #net.ipv4.ip_forward=1
+
+    sudo systemctl start hostapd
+    sudo systemctl start dnsmasq
+
+    sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+
+    sudo apt install iptables-persistent -y
+        select yes option
+
+    sudo apt-get install bridge-utils
+
+    sudo brctl addbr br0
+
+    sudo brctl addif br0 eth0
+
+    sudo vim /etc/network/interfaces
+        paste:  auto br0
+                iface br0 inet manual
+                bridge_ports eth0 wlan0
+
+
+
+
+
+raspAP:
+    username: web something
+    password: ChangeMe
+
+
+    raspap: username: admin, orig: user
+            password: secret, orig: secret
+
+    network:
+        username: KLUBBKANEL_SAFE
+        pwd:      Mats1_emt2_kjetil3
+
+transmission WebUI: 10.3.141.1:9091
+	username: beppi
+	password: JamilaLiten1
+
+plex: 10.3.1141.1:32400
+ssh to pi: pi@10.3.141.1</pre>
 </div>
 
 </div>
