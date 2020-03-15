@@ -201,6 +201,8 @@ Error message and password prompt
 
 <li>Hvor ting er:</li>
 
+<li>RaspAP</li>
+
 <li>Raspberry PI</li>
 
 </ul>
@@ -9464,8 +9466,8 @@ Error message and password prompt
 <div created="20200315200841093" modified="20200315200841093" title="$:/state/tab--1963855381">
 <pre>$:/core/ui/ControlPanel/Palette</pre>
 </div>
-<div created="20200315200056609" modified="20200315200839559" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Appearance</pre>
+<div created="20200315200056609" modified="20200315200924451" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Saving</pre>
 </div>
 <div created="20200315200059039" modified="20200315200433886" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
@@ -9473,7 +9475,7 @@ Error message and password prompt
 <div created="20200306200828532" modified="20200309083537974" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div list="$:/ControlPanel [[Hvor ting er:]] [[Raspberry PI]]" title="$:/StoryList">
+<div created="20200315201612589" list="RaspAP [[Hvor ting er:]] [[Raspberry PI]]" modified="20200315201612589" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9654,28 +9656,31 @@ Error message and password prompt
 Tenger: I glassskapet
 </pre>
 </div>
-<div created="20200307071142064" modified="20200309083854403" tags="" title="Raspberry PI" type="text/plain">
-<pre>update:
+<div created="20200315201335201" modified="20200315201347644" tags="[[Raspberry PI]]" title="RaspAP">
+<pre></pre>
+</div>
+<div created="20200307071142064" modified="20200315201606403" tags="TableOfContents" title="Raspberry PI" type="text/vnd.tiddlywiki">
+<pre>!update:
 
     sudo apt-get update
     sudo apt-get upgrade
 
-check internet:
+!check internet:
 
     ifconfig
 
-ssh to raspberry:
+!ssh to raspberry:
 
     ssh pi@10.0.0.105 # on LAN
     ssh pi@805.something # over inter
 
-reboot:
+!reboot:
     sudo reboot
 
-install nordvpn:
+!install nordvpn:
     sudo apt-get install openvpn
 
-setup AP:
+!setup AP:
     sudo apt-get install hostapd dnsmasq -y
 
     sudo systemctl stop hostapd
@@ -9738,7 +9743,7 @@ wpa_passphrase=32213221
 
 
 
-raspAP:
+!raspAP:
     username: web something
     password: ChangeMe
 
@@ -9750,12 +9755,14 @@ raspAP:
         username: KLUBBKANEL_SAFE
         pwd:      Mats1_emt2_kjetil3
 
-transmission WebUI: 10.3.141.1:9091
+!transmission WebUI: 10.3.141.1:9091
 	username: beppi
 	password: JamilaLiten1
 
-plex: 10.3.1141.1:32400
-ssh to pi: pi@10.3.141.1</pre>
+!plex: 
+    10.3.1141.1:32400
+!ssh to pi: 
+    pi@10.3.141.1</pre>
 </div>
 
 </div>
