@@ -181,6 +181,8 @@ Error message and password prompt
 
 <li>$:/SiteTitle</li>
 
+<li>$:/state/Excise/--215163003/tagnew</li>
+
 <li>$:/state/image-picker/system--1365487189</li>
 
 <li>$:/state/tab--1963855381</li>
@@ -203,6 +205,10 @@ Error message and password prompt
 
 <li>$:/state/toc/TableOfContents-Raspberry PI-497309061</li>
 
+<li>$:/state/toc/TableOfContents/Raspberry PI-RaspAP--118161433</li>
+
+<li>$:/state/toc/TableOfContents/Raspberry PI-RaspAP-497309061</li>
+
 <li>$:/state/tree/$:/GitHub/</li>
 
 <li>$:/state/tree/$:/GitLab/</li>
@@ -223,13 +229,17 @@ Error message and password prompt
 
 <li>Hello there!</li>
 
-<li>Hvor ting er:</li>
+<li>Hvor ting er</li>
 
 <li>RaspAP</li>
 
 <li>Raspberry PI</li>
 
+<li>Setup RaspAP</li>
+
 <li>TableOfContents</li>
+
+<li>Troubleshooting RaspAP</li>
 
 </ul>
 </p>
@@ -9492,6 +9502,9 @@ TableOfContents</pre>
 <div created="20200306195808530" modified="20200315202639921" title="$:/SiteTitle">
 <pre>NOMEWIKI</pre>
 </div>
+<div created="20200315225801806" modified="20200315225801806" title="$:/state/Excise/--215163003/tagnew">
+<pre>yes</pre>
+</div>
 <div created="20200315222745494" modified="20200315222745494" title="$:/state/image-picker/system--1365487189">
 <pre>show</pre>
 </div>
@@ -9516,13 +9529,19 @@ TableOfContents</pre>
 <div created="20200315223542805" modified="20200315223640797" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/All</pre>
 </div>
-<div created="20200306200828532" modified="20200315223735657" title="$:/state/tab/sidebar--595412856">
+<div created="20200306200828532" modified="20200315231353670" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Open</pre>
 </div>
-<div created="20200315222620577" modified="20200315223530564" title="$:/state/toc/TableOfContents-Raspberry PI--118161433">
-<pre>open</pre>
+<div created="20200315222620577" modified="20200315231353058" title="$:/state/toc/TableOfContents-Raspberry PI--118161433">
+<pre>close</pre>
 </div>
 <div created="20200315223527618" modified="20200315223527618" title="$:/state/toc/TableOfContents-Raspberry PI-497309061">
+<pre>open</pre>
+</div>
+<div created="20200315225826016" modified="20200315225826016" title="$:/state/toc/TableOfContents/Raspberry PI-RaspAP--118161433">
+<pre>open</pre>
+</div>
+<div created="20200315230041943" modified="20200315230041943" title="$:/state/toc/TableOfContents/Raspberry PI-RaspAP-497309061">
 <pre>open</pre>
 </div>
 <div created="20200315223607241" modified="20200315223607241" title="$:/state/tree/$:/GitHub/">
@@ -9534,7 +9553,7 @@ TableOfContents</pre>
 <div created="20200315223626785" modified="20200315223626785" title="$:/state/tree/$:/themes/">
 <pre>show</pre>
 </div>
-<div created="20200315223344591" list="TableOfContents RaspAP [[Raspberry PI]]" modified="20200315223739350" title="$:/StoryList">
+<div created="20200315223344591" list="" modified="20200315231336959" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9710,14 +9729,14 @@ TableOfContents</pre>
     }
 }</pre>
 </div>
-<div created="20200315222633675" modified="20200315223502398" tags="" title="Hello there!" type="text/vnd.tiddlywiki">
+<div created="20200315222633675" modified="20200315231230780" tags="TableOfContents" title="Hello there!" type="text/vnd.tiddlywiki">
 <pre>Welcome to my awful wikipage. In here you'll find the collected works of what I'm to lazy to remember. 
 
 If you'd like to contribute you can contact me to ask for access. 
 
 Enjoy!</pre>
 </div>
-<div created="20200306200609460" description="" modified="20200315204241225" tags="" title="Hvor ting er:" type="text/vnd.tiddlywiki">
+<div created="20200306200609460" description="" modified="20200315231344152" tags="TableOfContents" title="Hvor ting er" type="text/vnd.tiddlywiki">
 <pre>!Husnøkkel:
 I kaffiskapet.
 
@@ -9734,48 +9753,17 @@ På gulvet.
 I sprekka i sofaen.
 </pre>
 </div>
-<div created="20200315201335201" modified="20200315225026810" tags="[[Raspberry PI]]" title="RaspAP" type="text/vnd.tiddlywiki">
+<div created="20200315201335201" modified="20200315230647652" tags="[[Raspberry PI]]" title="RaspAP" type="text/vnd.tiddlywiki">
 <pre>!What is RaspAP?
 RaspAP essentialy makes it possible to host your own wireless network. Acting as a middleman between your router and other devices on your network, it takes the routers role of routing. While this &quot;guide&quot; is only for WI-FI, it's fully possible to route your ethernet aswell.
 
-!Setup RaspAP:
-This will first install hostapd and dnsmasq. These processes will then need to be stopped before be go ahead and configure them. We will start the configuration by opening nano.
-&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
-sudo apt-get install hostapd dnsmasq -y
+&lt;div class=&quot;tc-table-of-contents&quot;&gt;
 
-sudo systemctl stop hostapd sudo systemctl stop dnsmasq
+&lt;&lt;toc-selective-expandable 'RaspAP'&gt;&gt;
 
-sudo nano /etc/dhcpd.conf 
-&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-paste: 
-&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
-interface wlan0 static ip_address=10.0.0.105/24 denyinterfaces eth0 denyinterfaces wlan0
-&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
-sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig sudo vim /etc/dnsmasq.conf paste: interface=wlan0 dhcp-range=10.0.0.106,10.0.0.180,255.255.255.0,24h
-
-sudo vim /etc/hostapd/hostapd.conf paste: interface=wlan0 bridge=br0 hw_mode=g channel=7 wmm_enabled=0 macaddr_acl=0 auth_algs=1 ignore_broadcast_ssid=0 wpa=2 wpa_key_mgmt=WPA-PSK wpa_pairwise=TKIP rsn_pairwise=CCMP ssid=kaneltest wpa_passphrase=ChangeMe sudo vim /etc/default/hostapd unhash: DAEMON_CONF=&quot;/etc/hostapd/hostapd.conf&quot;
-
-sudo vim /etc/sysctl.conf unhash: #net.ipv4.ip_forward=1
-
-sudo systemctl start hostapd sudo systemctl start dnsmasq
-
-sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
-
-sudo apt install iptables-persistent -y select yes option
-
-sudo apt-get install bridge-utils
-
-sudo brctl addbr br0
-
-sudo brctl addif br0 eth0
-
-sudo vim /etc/network/interfaces paste: auto br0 iface br0 inet manual bridge_ports eth0 wlan0
-
-&lt;/div&gt;&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</pre>
+&lt;/div&gt;</pre>
 </div>
-<div created="20200307071142064" modified="20200315222619131" tags="TableOfContents" title="Raspberry PI" type="text/vnd.tiddlywiki">
+<div created="20200307071142064" modified="20200315231235861" tags="TableOfContents" title="Raspberry PI" type="text/vnd.tiddlywiki">
 <pre>!update:
 
     sudo apt-get update
@@ -9863,13 +9851,107 @@ wpa_passphrase=ChangeMe
 !ssh to pi: 
     pi@ipofraspberry</pre>
 </div>
-<div caption="Contents" created="20200315221215340" list="[[Raspberry PI]] [[Hvor ting er:]" list-after="$:/core/ui/SideBar/Open" modified="20200315222605736" tags="$:/tags/SideBar" title="TableOfContents" type="text/vnd.tiddlywiki">
+<div created="20200315225809462" modified="20200315231022554" tags="RaspAP" title="Setup RaspAP">
+<pre>!Setup RaspAP:
+This will first install hostapd and dnsmasq. These processes will then need to be stopped before be go ahead and configure them. We will start the configuration by opening nano.
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+sudo apt-get install hostapd dnsmasq -y
+
+sudo systemctl stop hostapd sudo systemctl stop dnsmasq
+
+sudo nano /etc/dhcpd.conf 
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+Paste or edit: 
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+interface wlan0 static ip_address=10.0.0.105/24 denyinterfaces eth0 denyinterfaces wlan0
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+Close nano and run:
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig sudo vim /etc/dnsmasq.conf
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+Paste or edit: 
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+interface=wlan0 dhcp-range=10.0.0.106,10.0.0.180,255.255.255.0,24h
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+Close nano and run:
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+sudo vim /etc/hostapd/hostapd.conf
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+Paste or edit: 
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+interface=wlan0 
+bridge=br0 
+hw_mode=g 
+channel=7 
+wmm_enabled=0 
+macaddr_acl=0 
+auth_algs=1 
+ignore_broadcast_ssid=0 
+wpa=2 
+wpa_key_mgmt=WPA-PSK 
+wpa_pairwise=TKIP 
+rsn_pairwise=CCMP 
+ssid=DesiredNetworkName
+wpa_passphrase=ChangeMe 
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+Close nano and run:
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+sudo vim /etc/default/hostapd unhash: DAEMON_CONF=&quot;/etc/hostapd/hostapd.conf&quot;
+
+sudo vim /etc/sysctl.conf unhash: #net.ipv4.ip_forward=1
+
+sudo systemctl start hostapd sudo systemctl start dnsmasq
+
+sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+
+sudo apt install iptables-persistent -y select yes option
+
+sudo apt-get install bridge-utils
+
+sudo brctl addbr br0
+
+sudo brctl addif br0 eth0
+
+sudo vim /etc/network/interfaces
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+Paste: 
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+auto br0 iface br0 inet manual bridge_ports eth0 wlan0
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+Close nano. Now you will have to reboot. </pre>
+</div>
+<div caption="Contents" created="20200315221215340" list="[[Hello there!]] [[Raspberry PI]] [[Hvor ting er]" list-after="$:/core/ui/SideBar/Open" modified="20200315231330709" tags="$:/tags/SideBar" title="TableOfContents" type="text/vnd.tiddlywiki">
 <pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
 
 &lt;&lt;toc-selective-expandable 'TableOfContents'&gt;&gt;
 
 &lt;/div&gt;
 </pre>
+</div>
+<div created="20200315230159453" modified="20200315230751796" tags="Troubleshooting RaspAP" title="Troubleshooting RaspAP" type="text/vnd.tiddlywiki">
+<pre>As per usual, nothing EVER works on the first try. If you have problems, I suggest you check if the processes are active using:&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+sudo systemctl status hostapd
+
+sudo systemctl status dnsmasq
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+If any of these return anything else than &quot;running&quot;, there is ovbiously something wrong. You could try to pinpoint the problems by checking the logfiles, and start the processes manually:
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+sudo systemctl start hostapd
+
+sudo systemctl start dnsmasq
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+Remember google is your friend, sometimes a restart fixes things aswell!</pre>
 </div>
 
 </div>
