@@ -199,6 +199,8 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla</li>
 
+<li>Draft of 'Raspberry PI'</li>
+
 <li>Hvor ting er:</li>
 
 <li>RaspAP</li>
@@ -9475,7 +9477,7 @@ Error message and password prompt
 <div created="20200306200828532" modified="20200309083537974" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div created="20200315201612589" list="RaspAP [[Hvor ting er:]] [[Raspberry PI]]" modified="20200315201612589" title="$:/StoryList">
+<div created="20200315201612589" list="RaspAP [[Hvor ting er:]] [[Draft of 'Raspberry PI']]" modified="20200315201612589" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9650,6 +9652,94 @@ Error message and password prompt
         }
     }
 }</pre>
+</div>
+<div created="20200307071142064" draft.of="Raspberry PI" draft.title="Raspberry PI" modified="20200315202241385" tags="TableOfContents" title="Draft of 'Raspberry PI'" type="text/vnd.tiddlywiki">
+<pre>!update:
+
+    sudo apt-get update
+    sudo apt-get upgrade
+
+!check internet:
+
+    ifconfig
+
+!ssh to raspberry:
+
+    ssh pi@ipofraspberry# on LAN
+    ssh pi@805.something # over inter
+
+!reboot:
+    sudo reboot
+
+!install nordvpn:
+    sudo apt-get install openvpn
+
+!setup AP:
+    sudo apt-get install hostapd dnsmasq -y
+
+    sudo systemctl stop hostapd
+    sudo systemctl stop dnsmasq
+
+    sudo nano /etc/dhcpd.conf
+        paste:  interface wlan0
+                static ip_address=10.0.0.105/24
+                denyinterfaces eth0
+                denyinterfaces wlan0
+
+    sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
+    sudo vim /etc/dnsmasq.conf
+        paste:  interface=wlan0
+                dhcp-range=10.0.0.106,10.0.0.180,255.255.255.0,24h
+
+    sudo vim /etc/hostapd/hostapd.conf
+        paste:  
+interface=wlan0
+bridge=br0
+hw_mode=g
+channel=7
+wmm_enabled=0
+macaddr_acl=0
+auth_algs=1
+ignore_broadcast_ssid=0
+wpa=2
+wpa_key_mgmt=WPA-PSK
+wpa_pairwise=TKIP
+rsn_pairwise=CCMP
+ssid=kaneltest
+wpa_passphrase=ChangeMe
+    sudo vim /etc/default/hostapd
+        unhash: DAEMON_CONF=&quot;/etc/hostapd/hostapd.conf&quot;
+
+    sudo vim /etc/sysctl.conf
+        unhash: #net.ipv4.ip_forward=1
+
+    sudo systemctl start hostapd
+    sudo systemctl start dnsmasq
+
+    sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+
+    sudo apt install iptables-persistent -y
+        select yes option
+
+    sudo apt-get install bridge-utils
+
+    sudo brctl addbr br0
+
+    sudo brctl addif br0 eth0
+
+    sudo vim /etc/network/interfaces
+        paste:  auto br0
+                iface br0 inet manual
+                bridge_ports eth0 wlan0
+
+!transmission WebUI: ipofraspberry:9091
+	username: username
+	password: password
+
+!plex: 
+    ipofraspberry:32400
+!ssh to pi: 
+    pi@ipofraspberry</pre>
 </div>
 <div created="20200306200609460" description="" modified="20200309083426195" tags="" title="Hvor ting er:" type="text/plain">
 <pre>Husnøkkel: I kaffiskapet
