@@ -147,6 +147,8 @@ Error message and password prompt
 
 <li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/theme</li>
 
+<li>$:/config/RelinkOnRename</li>
+
 <li>$:/core</li>
 
 <li>$:/DefaultTiddlers</li>
@@ -183,13 +185,29 @@ Error message and password prompt
 
 <li>$:/state/tab--1963855381</li>
 
+<li>$:/state/tab--2112689675</li>
+
+<li>$:/state/tab--959111941</li>
+
+<li>$:/state/tab-1163638994</li>
+
 <li>$:/state/tab-1749438307</li>
 
 <li>$:/state/tab-2065006209</li>
 
+<li>$:/state/tab/moresidebar-1850697562</li>
+
 <li>$:/state/tab/sidebar--595412856</li>
 
 <li>$:/state/toc/TableOfContents-Raspberry PI--118161433</li>
+
+<li>$:/state/toc/TableOfContents-Raspberry PI-497309061</li>
+
+<li>$:/state/tree/$:/GitHub/</li>
+
+<li>$:/state/tree/$:/GitLab/</li>
+
+<li>$:/state/tree/$:/themes/</li>
 
 <li>$:/StoryList</li>
 
@@ -203,7 +221,7 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla</li>
 
-<li>Hello there</li>
+<li>Hello there!</li>
 
 <li>Hvor ting er:</li>
 
@@ -231,6 +249,9 @@ Error message and password prompt
 </div>
 <div created="20200307071115166" modified="20200307071115166" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/theme">
 <pre>show</pre>
+</div>
+<div created="20200315223500469" modified="20200315223500469" title="$:/config/RelinkOnRename">
+<pre>yes</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.21">
 <pre>{
@@ -9425,9 +9446,9 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20200306200239651" modified="20200306200556211" title="$:/DefaultTiddlers">
-<pre>[list[$:/StoryList]]
-[list[$:/StoryList]]</pre>
+<div created="20200306200239651" modified="20200315223510788" title="$:/DefaultTiddlers">
+<pre>[[Hello there!]]
+TableOfContents</pre>
 </div>
 <div created="20200315200355787" modified="20200315200358272" title="$:/GitHub/Filename">
 <pre>index.html</pre>
@@ -9477,19 +9498,43 @@ Error message and password prompt
 <div created="20200315200841093" modified="20200315200841093" title="$:/state/tab--1963855381">
 <pre>$:/core/ui/ControlPanel/Palette</pre>
 </div>
-<div created="20200315200056609" modified="20200315223234327" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/KeyboardShortcuts</pre>
+<div created="20200315223433024" modified="20200315223507400" title="$:/state/tab--2112689675">
+<pre>$:/core/ui/ControlPanel/Basics</pre>
+</div>
+<div created="20200315223434427" modified="20200315223436289" title="$:/state/tab--959111941">
+<pre>$:/core/ui/ControlPanel/EditorTypes</pre>
+</div>
+<div created="20200315223635654" modified="20200315223635654" title="$:/state/tab-1163638994">
+<pre>$:/core/ui/MoreSideBar/Plugins/Languages</pre>
+</div>
+<div created="20200315200056609" modified="20200315223346167" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Info</pre>
 </div>
 <div created="20200315200059039" modified="20200315200433886" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
-<div created="20200306200828532" modified="20200315223147945" title="$:/state/tab/sidebar--595412856">
-<pre>TableOfContents</pre>
+<div created="20200315223542805" modified="20200315223640797" title="$:/state/tab/moresidebar-1850697562">
+<pre>$:/core/ui/MoreSideBar/All</pre>
 </div>
-<div created="20200315222620577" modified="20200315222620577" title="$:/state/toc/TableOfContents-Raspberry PI--118161433">
+<div created="20200306200828532" modified="20200315223735657" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Open</pre>
+</div>
+<div created="20200315222620577" modified="20200315223530564" title="$:/state/toc/TableOfContents-Raspberry PI--118161433">
 <pre>open</pre>
 </div>
-<div created="20200315222544831" list="" modified="20200315223206218" title="$:/StoryList">
+<div created="20200315223527618" modified="20200315223527618" title="$:/state/toc/TableOfContents-Raspberry PI-497309061">
+<pre>open</pre>
+</div>
+<div created="20200315223607241" modified="20200315223607241" title="$:/state/tree/$:/GitHub/">
+<pre>show</pre>
+</div>
+<div created="20200315223621191" modified="20200315223621191" title="$:/state/tree/$:/GitLab/">
+<pre>show</pre>
+</div>
+<div created="20200315223626785" modified="20200315223626785" title="$:/state/tree/$:/themes/">
+<pre>show</pre>
+</div>
+<div created="20200315223344591" list="TableOfContents RaspAP [[Raspberry PI]]" modified="20200315223739350" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9537,11 +9582,11 @@ Error message and password prompt
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;2560&quot;
+            &quot;text&quot;: &quot;1408&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1440&quot;
+            &quot;text&quot;: &quot;792&quot;
         },
         &quot;$:/info/browser/language&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/language&quot;,
@@ -9665,7 +9710,7 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20200315222633675" modified="20200315223140242" tags="" title="Hello there" type="text/vnd.tiddlywiki">
+<div created="20200315222633675" modified="20200315223502398" tags="" title="Hello there!" type="text/vnd.tiddlywiki">
 <pre>Welcome to my awful wikipage. In here you'll find the collected works of what I'm to lazy to remember. 
 
 If you'd like to contribute you can contact me to ask for access. 
@@ -9689,8 +9734,46 @@ På gulvet.
 I sprekka i sofaen.
 </pre>
 </div>
-<div created="20200315201335201" modified="20200315221600837" tags="[[Raspberry PI]]" title="RaspAP">
-<pre></pre>
+<div created="20200315201335201" modified="20200315225026810" tags="[[Raspberry PI]]" title="RaspAP" type="text/vnd.tiddlywiki">
+<pre>!What is RaspAP?
+RaspAP essentialy makes it possible to host your own wireless network. Acting as a middleman between your router and other devices on your network, it takes the routers role of routing. While this &quot;guide&quot; is only for WI-FI, it's fully possible to route your ethernet aswell.
+
+!Setup RaspAP:
+This will first install hostapd and dnsmasq. These processes will then need to be stopped before be go ahead and configure them. We will start the configuration by opening nano.
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+sudo apt-get install hostapd dnsmasq -y
+
+sudo systemctl stop hostapd sudo systemctl stop dnsmasq
+
+sudo nano /etc/dhcpd.conf 
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+paste: 
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+interface wlan0 static ip_address=10.0.0.105/24 denyinterfaces eth0 denyinterfaces wlan0
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig sudo vim /etc/dnsmasq.conf paste: interface=wlan0 dhcp-range=10.0.0.106,10.0.0.180,255.255.255.0,24h
+
+sudo vim /etc/hostapd/hostapd.conf paste: interface=wlan0 bridge=br0 hw_mode=g channel=7 wmm_enabled=0 macaddr_acl=0 auth_algs=1 ignore_broadcast_ssid=0 wpa=2 wpa_key_mgmt=WPA-PSK wpa_pairwise=TKIP rsn_pairwise=CCMP ssid=kaneltest wpa_passphrase=ChangeMe sudo vim /etc/default/hostapd unhash: DAEMON_CONF=&quot;/etc/hostapd/hostapd.conf&quot;
+
+sudo vim /etc/sysctl.conf unhash: #net.ipv4.ip_forward=1
+
+sudo systemctl start hostapd sudo systemctl start dnsmasq
+
+sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+
+sudo apt install iptables-persistent -y select yes option
+
+sudo apt-get install bridge-utils
+
+sudo brctl addbr br0
+
+sudo brctl addif br0 eth0
+
+sudo vim /etc/network/interfaces paste: auto br0 iface br0 inet manual bridge_ports eth0 wlan0
+
+&lt;/div&gt;&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</pre>
 </div>
 <div created="20200307071142064" modified="20200315222619131" tags="TableOfContents" title="Raspberry PI" type="text/vnd.tiddlywiki">
 <pre>!update:
