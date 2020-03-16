@@ -209,6 +209,8 @@ Error message and password prompt
 
 <li>$:/state/toc/TableOfContents-Raspberry PI-497309061</li>
 
+<li>$:/state/toc/TableOfContents/Raspberry PI-Monitorix--118161433</li>
+
 <li>$:/state/toc/TableOfContents/Raspberry PI-RaspAP--118161433</li>
 
 <li>$:/state/toc/TableOfContents/Raspberry PI-RaspAP-497309061</li>
@@ -237,13 +239,19 @@ Error message and password prompt
 
 <li>Hvor ting er</li>
 
+<li>Monitorix</li>
+
 <li>RaspAP</li>
 
 <li>Raspberry PI</li>
 
+<li>Setup Monitorix</li>
+
 <li>Setup RaspAP</li>
 
 <li>TableOfContents</li>
+
+<li>Troubleshooting Monitorix</li>
 
 <li>Troubleshooting RaspAP</li>
 
@@ -9550,6 +9558,9 @@ TableOfContents</pre>
 <div created="20200315223527618" modified="20200315223527618" title="$:/state/toc/TableOfContents-Raspberry PI-497309061">
 <pre>open</pre>
 </div>
+<div created="20200316165030157" creator="Nome" modified="20200316165030158" modifier="Nome" title="$:/state/toc/TableOfContents/Raspberry PI-Monitorix--118161433">
+<pre>open</pre>
+</div>
 <div created="20200315225826016" modified="20200315225826016" title="$:/state/toc/TableOfContents/Raspberry PI-RaspAP--118161433">
 <pre>open</pre>
 </div>
@@ -9568,7 +9579,7 @@ TableOfContents</pre>
 <div created="20200316091151741" creator="n" modified="20200316091154916" modifier="Nom" title="$:/status/UserName">
 <pre>Nome</pre>
 </div>
-<div created="20200316091028965" creator="Nome" list="RaspAP [[Raspberry PI]] [[Hvor ting er]]" modified="20200316091342885" modifier="Nome" title="$:/StoryList">
+<div created="20200316162812649" creator="Nome" list="[[Troubleshooting Monitorix]] [[Setup RaspAP]] [[Troubleshooting RaspAP]] [[Setup Monitorix]] Monitorix RaspAP" modified="20200316165109972" modifier="Nome" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9616,11 +9627,11 @@ TableOfContents</pre>
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;1408&quot;
+            &quot;text&quot;: &quot;1920&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;792&quot;
+            &quot;text&quot;: &quot;1080&quot;
         },
         &quot;$:/info/browser/language&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/language&quot;,
@@ -9771,7 +9782,20 @@ I sprekka i sofaen.
 På badet.
 </pre>
 </div>
-<div created="20200315201335201" creator="Nome" modified="20200316091432690" modifier="Nome" tags="[[Raspberry PI]]" title="RaspAP" type="text/vnd.tiddlywiki">
+<div created="20200316163015618" creator="Nome" modified="20200316165128189" modifier="Nome" tags="[[Raspberry PI]]" title="Monitorix" type="text/vnd.tiddlywiki">
+<pre>!What is Monitorix?
+
+Monitorix is a software to monitor internet bandwidth usage and then present them nicely in a graphical interface. 
+
+So far I've not got it to work, SO AWAY PATIENTLY FOR UPDATE!
+
+&lt;div class=&quot;tc-table-of-contents&quot;&gt;
+
+&lt;&lt;toc-selective-expandable 'Monitorix'&gt;&gt;
+
+&lt;/div&gt;</pre>
+</div>
+<div created="20200315201335201" creator="Nome" modified="20200316163215706" modifier="Nome" tags="[[Raspberry PI]]" title="RaspAP" type="text/vnd.tiddlywiki">
 <pre>!What is RaspAP?
 RaspAP essentialy makes it possible to host your own wireless network. Acting as a middleman between your router and other devices on your network, it takes the routers role of routing. While this &quot;guide&quot; is only for WI-FI, it's fully possible to route your ethernet aswell.
 
@@ -9875,7 +9899,28 @@ wpa_passphrase=ChangeMe
 !ssh to pi: 
     pi@ipofraspberry</pre>
 </div>
-<div created="20200315225809462" modified="20200315231022554" tags="RaspAP" title="Setup RaspAP">
+<div created="20200316163308807" creator="Nome" modified="20200316165107985" modifier="Nome" tags="Setup Monitorix" title="Setup Monitorix">
+<pre>!Installation:
+* Via repository:
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+sudo apt-get update
+
+sudo apt-get install monitorix
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+* Manually, downloading first the package and taking care for dependencies, and finally installing it. Remember to also navigate to the folder where Monitorix is downloaded.
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+sudo apt-get update
+
+sudo apt-get install rrdtool perl libwww-perl libmailtools-perl libmime-lite-perl librrds-perl libdbi-perl libxml-simple-perl libhttp-server-simple-perl libconfig-general-perl libio-socket-ssl-perl
+sudo dpkg -i monitorix*.deb
+
+# apt-get -f install
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      
+</pre>
+</div>
+<div created="20200315225809462" creator="Nome" modified="20200316165117600" modifier="Nome" tags="Setup RaspAP" title="Setup RaspAP">
 <pre>!Setup RaspAP:
 This will first install hostapd and dnsmasq. These processes will then need to be stopped before be go ahead and configure them. We will start the configuration by opening nano.
 &lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
@@ -9960,7 +10005,38 @@ Close nano. Now you will have to reboot. </pre>
 &lt;/div&gt;
 </pre>
 </div>
-<div created="20200315230159453" modified="20200315230751796" tags="Troubleshooting RaspAP" title="Troubleshooting RaspAP" type="text/vnd.tiddlywiki">
+<div created="20200316165131248" creator="Nome" modified="20200316170332591" modifier="Nome" tags="" title="Troubleshooting Monitorix">
+<pre>As per usual, nothing EVER works on the first try. If you have problems, I suggest you check if the processes are active using:&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+sudo systemctl status monitorix.service
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+If this return anything else than &quot;running&quot;, there is obviously something wrong. You could try to pinpoint the problems by checking the logfiles, and start the service manually:
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+sudo systemctl start monitorix.service
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+Another problem that might occur is that the service is masked. If this is the case you can do the following:
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+sudo systemctl unmask monitorix.service
+
+sudo systemctl enable monitorix.service
+
+sudo systemctl start monitorix.service
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+If you are in luck, the port which defaults to 8080 will not work. So you'll have to reconfigure Monitorix to use another port.
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+sudo nano /etc/monitorix/monitorix.conf
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+Change port=8080 to port=ChangeMe.
+
+Remember google is your friend, sometimes a restart fixes things aswell!
+
+</pre>
+</div>
+<div created="20200315230159453" creator="Nome" modified="20200316165246835" modifier="Nome" tags="Troubleshooting RaspAP" title="Troubleshooting RaspAP" type="text/vnd.tiddlywiki">
 <pre>As per usual, nothing EVER works on the first try. If you have problems, I suggest you check if the processes are active using:&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
 sudo systemctl status hostapd
 
