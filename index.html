@@ -235,6 +235,10 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla</li>
 
+<li>Configure Monitorix</li>
+
+<li>Draft of 'Troubleshooting Monitorix' by computor</li>
+
 <li>halp</li>
 
 <li>Hello there!</li>
@@ -9581,7 +9585,7 @@ TableOfContents</pre>
 <div created="20200316091151741" creator="n" modified="20200316171146797" modifier="computo" title="$:/status/UserName">
 <pre>computor</pre>
 </div>
-<div created="20200316190445026" creator="computor" list="halp [[Troubleshooting Monitorix]] [[Hello there!]] TableOfContents" modified="20200316191235970" modifier="computor" title="$:/StoryList">
+<div created="20200316223307658" creator="computor" list="RaspAP [[Troubleshooting RaspAP]] [[Setup RaspAP]] [[Configure Monitorix]] Monitorix [[Draft of 'Troubleshooting Monitorix' by computor]] [[Setup Monitorix]] [[Hello there!]] TableOfContents" modified="20200316224348356" modifier="computor" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9757,6 +9761,70 @@ TableOfContents</pre>
     }
 }</pre>
 </div>
+<div created="20200316223544339" creator="computor" modified="20200316224305817" modifier="computor" tags="Configuration Monitorix" title="Configure Monitorix">
+<pre>!Configure to monitor multiple devices on LAN
+*enabled: Default value: n 
+** change this to y
+
+*max: Default value: 10
+**This is the number of LAN devices you want to monitor. There is no limit, but keep in mind that every time this number changes, Monitorix will resize the traffacct.rrd file, removing all historical data. 
+
+*graphs_per_row: Default value: 2 
+**If your horizontal screen resolution is pretty wide, you may want to increase the number of graphs that appear on each row.
+
+*list
+**This is a comma-separated list of names of PCs, LAN devices or whole networks that you want to monitor. The only requirement is that all they must utilize this server as their gateway.
+**If the names in this list are able to be resolved by a DNS query then you don’t need to define the desc list (below) with corresponding IP addresses, unless you want monthly reports.
+**An example would be:
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+        list = pc8, printer, scanner, lan3 
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+*desc
+**This is the list of IP addresses with network masks and email addresses corresponding to the entries defined in the list. This option is only used when the those entries are not resolvable through a DNS query.
+**An example would be:
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+        &lt;desc&gt;
+                0 = 192.168.1.101/32, ace@example.com
+                1 = 192.168.1.102/32, gene@example.com
+                2 = 192.168.1.103/32, paul@example.com
+                3 = 192.168.1.104/32, peter@example.com
+        &lt;/desc 
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+</pre>
+</div>
+<div created="20200316165131248" creator="Nome" draft.of="Troubleshooting Monitorix" draft.title="Troubleshooting Monitorix" modified="20200316224109447" modifier="computor" tags="Troubleshooting Monitorix" title="Draft of 'Troubleshooting Monitorix' by computor">
+<pre>As per usual, nothing EVER works on the first try. If you have problems, I suggest you check if the processes are active using:&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+sudo systemctl status monitorix.service
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+If this return anything else than &quot;running&quot;, there is obviously something wrong. You could try to pinpoint the problems by checking the logfiles, and start the service manually:
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+sudo systemctl start monitorix.service
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+Another problem that might occur is that the service is masked. If this is the case you can do the following:
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+sudo systemctl unmask monitorix.service
+
+sudo systemctl enable monitorix.service
+
+sudo systemctl start monitorix.service
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+If you are in luck, the port which defaults to 8080 will not work. So you'll have to reconfigure Monitorix to use another port.
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+sudo nano /etc/monitorix/monitorix.conf
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+Change port=8080 to port=ChangeMe.
+
+Remember google is your friend, sometimes a restart fixes things aswell!
+
+</pre>
+</div>
 <div author="computor" created="20200316172017393" creator="computor" modified="20200316190514272" modifier="computor" tags="TableOfContents notgood" title="halp" type="text/plain">
 <pre>oman not good</pre>
 </div>
@@ -9904,7 +9972,7 @@ wpa_passphrase=ChangeMe
 !ssh to pi: 
     pi@ipofraspberry</pre>
 </div>
-<div created="20200316163308807" creator="Nome" modified="20200316165107985" modifier="Nome" tags="Setup Monitorix" title="Setup Monitorix">
+<div created="20200316163308807" creator="Nome" modified="20200316223512838" modifier="computor" tags="Setup Monitorix" title="Setup Monitorix">
 <pre>!Installation:
 * Via repository:
 &lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
@@ -9922,8 +9990,8 @@ sudo dpkg -i monitorix*.deb
 
 # apt-get -f install
 &quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-      
-</pre>
+
+Head on over to localhost:8080 or localhost:YOURPORT, depending on if you changed port, and you're good to go.</pre>
 </div>
 <div created="20200315225809462" creator="Nome" modified="20200316165117600" modifier="Nome" tags="Setup RaspAP" title="Setup RaspAP">
 <pre>!Setup RaspAP:
