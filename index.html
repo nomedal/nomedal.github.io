@@ -9587,7 +9587,7 @@ TableOfContents</pre>
 <div created="20200316091151741" creator="n" modified="20200317100750763" modifier="nom" title="$:/status/UserName">
 <pre>nome</pre>
 </div>
-<div created="20200317100743527" creator="computor" list="" modified="20200317103530640" modifier="nome" title="$:/StoryList">
+<div created="20200317100743527" creator="computor" list="[[Useful terminal commands]]" modified="20200317104425750" modifier="nome" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9827,12 +9827,12 @@ I sprekka i sofaen.
 På badet.
 </pre>
 </div>
-<div created="20200316163015618" creator="Nome" modified="20200316165128189" modifier="Nome" tags="[[Raspberry PI]]" title="Monitorix" type="text/vnd.tiddlywiki">
+<div created="20200316163015618" creator="Nome" modified="20200317104318018" modifier="nome" tags="[[Raspberry PI]]" title="Monitorix" type="text/vnd.tiddlywiki">
 <pre>!What is Monitorix?
 
 Monitorix is a software to monitor internet bandwidth usage and then present them nicely in a graphical interface. 
 
-So far I've not got it to work, SO AWAY PATIENTLY FOR UPDATE!
+So far I've only got it to work on devices connected to the RaspPi e.g. if the RaspPi is configured to host a Wi-Fi. But it should be possible to make it work on upwards in the hierarchy aswell.
 
 &lt;div class=&quot;tc-table-of-contents&quot;&gt;
 
@@ -9850,22 +9850,12 @@ RaspAP essentialy makes it possible to host your own wireless network. Acting as
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20200307071142064" creator="Nome" modified="20200317101914846" modifier="nome" tags="TableOfContents" title="Raspberry PI" type="text/vnd.tiddlywiki">
+<div created="20200307071142064" creator="Nome" modified="20200317104028746" modifier="nome" tags="TableOfContents" title="Raspberry PI" type="text/vnd.tiddlywiki">
 <pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
 
 &lt;&lt;toc-selective-expandable 'Raspberry PI'&gt;&gt;
 
-&lt;/div&gt;
-
-
-!transmission WebUI: ipofraspberry:9091
-	username: username
-	password: password
-
-!plex: 
-    ipofraspberry:32400
-!ssh to pi: 
-    pi@ipofraspberry</pre>
+&lt;/div&gt;</pre>
 </div>
 <div created="20200316163308807" creator="Nome" modified="20200316223512838" modifier="computor" tags="Setup Monitorix" title="Setup Monitorix">
 <pre>!Installation:
@@ -10021,7 +10011,7 @@ sudo systemctl start dnsmasq
 
 Remember google is your friend, sometimes a restart fixes things aswell!</pre>
 </div>
-<div created="20200317101246544" creator="nome" modified="20200317102302184" modifier="nome" tags="Commands [[Raspberry PI]]" title="Useful terminal commands">
+<div created="20200317101246544" creator="nome" modified="20200317104908966" modifier="nome" tags="Commands [[Raspberry PI]]" title="Useful terminal commands">
 <pre>!update:
 &lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
 sudo apt-get update
@@ -10049,10 +10039,32 @@ sudo reboot
 &lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
 sudo apt-get install openvpn
 &quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-</pre>
+
+! Configure service status:
+Very useful if you want to check if a service is running. Or you want to force start/stop a service. Sometimes a service is masked, so there is not way for you to monitor or configure it. Then an unmasking is in order. Remember that it's always a reason why a service that should be running, isn't. Sometimes you can figure out why by reading the logfiles.
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+sudo systemctl status ExampleService
+
+sudo systemctl start ExampleService
+
+sudo systemctl stop ExampleService
+
+sudo systemctl restart ExampleService
+
+sudo systemctl unmask ExampleService
+
+sudo systemctl mask ExampleService
+
+sudo systemctl enable ExampleService
+
+sudo systemctl unenable ExampleService
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</pre>
 </div>
-<div created="20200317103012896" creator="nome" modified="20200317103727716" modifier="nome" tags="WebUI [[Raspberry PI]]" title="WebUI's">
-<pre>! Transmission WebUI 
+<div created="20200317103012896" creator="nome" modified="20200317103920162" modifier="nome" tags="WebUI [[Raspberry PI]]" title="WebUI's">
+<pre>! RaspAP WebUI
+* http://NetworkDefaultIp
+
+! Transmission WebUI 
 * IpOfRaspberry:9091
 * localhost:9091
 
