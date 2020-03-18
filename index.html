@@ -259,10 +259,6 @@ Error message and password prompt
 
 <li>Troubleshooting RaspAP</li>
 
-<li>Useful terminal commands</li>
-
-<li>WebUI's</li>
-
 </ul>
 </p>
 
@@ -9533,8 +9529,8 @@ TableOfContents</pre>
 <div created="20200315200841093" creator="computor" modified="20200316190616171" modifier="computor" title="$:/state/tab--1963855381">
 <pre>$:/core/ui/ControlPanel/Theme</pre>
 </div>
-<div created="20200315223433024" creator="Nome" modified="20200317100747035" modifier="computor" title="$:/state/tab--2112689675">
-<pre>$:/core/ui/ControlPanel/Basics</pre>
+<div created="20200315223433024" creator="Nome" modified="20200316190707544" modifier="computor" title="$:/state/tab--2112689675">
+<pre>$:/core/ui/ControlPanel/Advanced</pre>
 </div>
 <div created="20200316091206228" creator="Nome" modified="20200316091206228" modifier="Nome" title="$:/state/tab--86143343">
 <pre>$:/core/ui/ControlPanel/Plugins/Installed/Themes</pre>
@@ -9554,7 +9550,7 @@ TableOfContents</pre>
 <div created="20200315223542805" modified="20200315223640797" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/All</pre>
 </div>
-<div created="20200306200828532" creator="computor" modified="20200316190516382" modifier="computor" title="$:/state/tab/sidebar--595412856">
+<div created="20200306200828532" creator="computor" modified="20200318101317812" modifier="computor" title="$:/state/tab/sidebar--595412856">
 <pre>TableOfContents</pre>
 </div>
 <div created="20200316091414324" creator="Nome" modified="20200316091417556" modifier="Nome" title="$:/state/toc/Raspberry PI-RaspAP--1840672247">
@@ -9584,10 +9580,10 @@ TableOfContents</pre>
 <div created="20200315223626785" modified="20200315223626785" title="$:/state/tree/$:/themes/">
 <pre>show</pre>
 </div>
-<div created="20200316091151741" creator="n" modified="20200317100750763" modifier="nom" title="$:/status/UserName">
-<pre>nome</pre>
+<div created="20200316091151741" creator="n" modified="20200316171146797" modifier="computo" title="$:/status/UserName">
+<pre>computor</pre>
 </div>
-<div created="20200317100743527" creator="computor" list="[[Useful terminal commands]]" modified="20200317104425750" modifier="nome" title="$:/StoryList">
+<div created="20200318101304739" creator="computor" list="" modified="20200318101337881" modifier="computor" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9763,7 +9759,7 @@ TableOfContents</pre>
     }
 }</pre>
 </div>
-<div created="20200316223544339" creator="computor" modified="20200317101959468" modifier="nome" tags="Configuration Monitorix" title="Configure Monitorix">
+<div created="20200316223544339" creator="computor" modified="20200316224305817" modifier="computor" tags="Configuration Monitorix" title="Configure Monitorix">
 <pre>!Configure to monitor multiple devices on LAN
 *enabled: Default value: n 
 ** change this to y
@@ -9794,7 +9790,6 @@ TableOfContents</pre>
         &lt;/desc 
 &quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-Emails are optional here, haven't tried its functionality. 
 </pre>
 </div>
 <div author="computor" created="20200316172017393" creator="computor" modified="20200316190514272" modifier="computor" tags="TableOfContents notgood" title="halp" type="text/plain">
@@ -9827,12 +9822,12 @@ I sprekka i sofaen.
 På badet.
 </pre>
 </div>
-<div created="20200316163015618" creator="Nome" modified="20200317104318018" modifier="nome" tags="[[Raspberry PI]]" title="Monitorix" type="text/vnd.tiddlywiki">
+<div created="20200316163015618" creator="Nome" modified="20200316165128189" modifier="Nome" tags="[[Raspberry PI]]" title="Monitorix" type="text/vnd.tiddlywiki">
 <pre>!What is Monitorix?
 
 Monitorix is a software to monitor internet bandwidth usage and then present them nicely in a graphical interface. 
 
-So far I've only got it to work on devices connected to the RaspPi e.g. if the RaspPi is configured to host a Wi-Fi. But it should be possible to make it work on upwards in the hierarchy aswell.
+So far I've not got it to work, SO AWAY PATIENTLY FOR UPDATE!
 
 &lt;div class=&quot;tc-table-of-contents&quot;&gt;
 
@@ -9850,12 +9845,99 @@ RaspAP essentialy makes it possible to host your own wireless network. Acting as
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20200307071142064" creator="Nome" modified="20200317104028746" modifier="nome" tags="TableOfContents" title="Raspberry PI" type="text/vnd.tiddlywiki">
+<div created="20200307071142064" creator="Nome" modified="20200316091412249" modifier="Nome" tags="TableOfContents" title="Raspberry PI" type="text/vnd.tiddlywiki">
 <pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
 
 &lt;&lt;toc-selective-expandable 'Raspberry PI'&gt;&gt;
 
-&lt;/div&gt;</pre>
+&lt;/div&gt;
+
+!update:
+
+    sudo apt-get update
+    sudo apt-get upgrade
+
+!check internet:
+
+    ifconfig
+
+!ssh to raspberry:
+
+    ssh pi@ipofraspberry# on LAN
+    ssh pi@805.something # over inter
+
+!reboot:
+    sudo reboot
+
+!install nordvpn:
+    sudo apt-get install openvpn
+
+!setup AP:
+    sudo apt-get install hostapd dnsmasq -y
+
+    sudo systemctl stop hostapd
+    sudo systemctl stop dnsmasq
+
+    sudo nano /etc/dhcpd.conf
+        paste:  interface wlan0
+                static ip_address=10.0.0.105/24
+                denyinterfaces eth0
+                denyinterfaces wlan0
+
+    sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
+    sudo vim /etc/dnsmasq.conf
+        paste:  interface=wlan0
+                dhcp-range=10.0.0.106,10.0.0.180,255.255.255.0,24h
+
+    sudo vim /etc/hostapd/hostapd.conf
+        paste:  
+interface=wlan0
+bridge=br0
+hw_mode=g
+channel=7
+wmm_enabled=0
+macaddr_acl=0
+auth_algs=1
+ignore_broadcast_ssid=0
+wpa=2
+wpa_key_mgmt=WPA-PSK
+wpa_pairwise=TKIP
+rsn_pairwise=CCMP
+ssid=kaneltest
+wpa_passphrase=ChangeMe
+    sudo vim /etc/default/hostapd
+        unhash: DAEMON_CONF=&quot;/etc/hostapd/hostapd.conf&quot;
+
+    sudo vim /etc/sysctl.conf
+        unhash: #net.ipv4.ip_forward=1
+
+    sudo systemctl start hostapd
+    sudo systemctl start dnsmasq
+
+    sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+
+    sudo apt install iptables-persistent -y
+        select yes option
+
+    sudo apt-get install bridge-utils
+
+    sudo brctl addbr br0
+
+    sudo brctl addif br0 eth0
+
+    sudo vim /etc/network/interfaces
+        paste:  auto br0
+                iface br0 inet manual
+                bridge_ports eth0 wlan0
+
+!transmission WebUI: ipofraspberry:9091
+	username: username
+	password: password
+
+!plex: 
+    ipofraspberry:32400
+!ssh to pi: 
+    pi@ipofraspberry</pre>
 </div>
 <div created="20200316163308807" creator="Nome" modified="20200316223512838" modifier="computor" tags="Setup Monitorix" title="Setup Monitorix">
 <pre>!Installation:
@@ -9878,9 +9960,9 @@ sudo dpkg -i monitorix*.deb
 
 Head on over to localhost:8080 or localhost:YOURPORT, depending on if you changed port, and you're good to go.</pre>
 </div>
-<div created="20200315225809462" creator="Nome" modified="20200316165117600" modifier="Nome" tags="Setup RaspAP" title="Setup RaspAP">
+<div created="20200315225809462" creator="Nome" modified="20200318101525295" modifier="computor" tags="Setup RaspAP" title="Setup RaspAP">
 <pre>!Setup RaspAP:
-This will first install hostapd and dnsmasq. These processes will then need to be stopped before be go ahead and configure them. We will start the configuration by opening nano.
+This will first install hostapd and dnsmasq. These processes will then need to be stopped before we go ahead and configure them. We will start the configuration by opening nano.
 &lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
 sudo apt-get install hostapd dnsmasq -y
 
@@ -9896,7 +9978,9 @@ interface wlan0 static ip_address=10.0.0.105/24 denyinterfaces eth0 denyinterfac
 
 Close nano and run:
 &lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
-sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig sudo vim /etc/dnsmasq.conf
+sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig 
+
+sudo nano /etc/dnsmasq.conf
 &quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 Paste or edit: 
@@ -9906,7 +9990,7 @@ interface=wlan0 dhcp-range=10.0.0.106,10.0.0.180,255.255.255.0,24h
 
 Close nano and run:
 &lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
-sudo vim /etc/hostapd/hostapd.conf
+sudo nano /etc/hostapd/hostapd.conf
 &quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 Paste or edit: 
@@ -9929,9 +10013,9 @@ wpa_passphrase=ChangeMe
 
 Close nano and run:
 &lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
-sudo vim /etc/default/hostapd unhash: DAEMON_CONF=&quot;/etc/hostapd/hostapd.conf&quot;
+sudo nano /etc/default/hostapd unhash: DAEMON_CONF=&quot;/etc/hostapd/hostapd.conf&quot;
 
-sudo vim /etc/sysctl.conf unhash: #net.ipv4.ip_forward=1
+sudo nano /etc/sysctl.conf unhash: #net.ipv4.ip_forward=1
 
 sudo systemctl start hostapd sudo systemctl start dnsmasq
 
@@ -9945,7 +10029,7 @@ sudo brctl addbr br0
 
 sudo brctl addif br0 eth0
 
-sudo vim /etc/network/interfaces
+sudo nano /etc/network/interfaces
 &quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 Paste: 
@@ -9963,7 +10047,7 @@ Close nano. Now you will have to reboot. </pre>
 &lt;/div&gt;
 </pre>
 </div>
-<div created="20200316165131248" creator="Nome" modified="20200317100805360" modifier="nome" tags="Troubleshooting Monitorix" title="Troubleshooting Monitorix">
+<div created="20200316165131248" creator="Nome" modified="20200318101313002" modifier="computor" tags="Troubleshooting Monitorix" title="Troubleshooting Monitorix">
 <pre>As per usual, nothing EVER works on the first try. If you have problems, I suggest you check if the processes are active using:&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
 sudo systemctl status monitorix.service
 &quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -10010,76 +10094,6 @@ sudo systemctl start dnsmasq
 &quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 Remember google is your friend, sometimes a restart fixes things aswell!</pre>
-</div>
-<div created="20200317101246544" creator="nome" modified="20200317104908966" modifier="nome" tags="Commands [[Raspberry PI]]" title="Useful terminal commands">
-<pre>!update:
-&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
-sudo apt-get update
-sudo apt-get upgrade
-&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-!check internet:
-&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
-ifconfig
-&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-!ssh to raspberry:
-&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
-ssh pi@LocalRaspberryIP # on LAN
-
-ssh pi@PublicRaspberryIP # over inter
-&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-!reboot:
-&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
-sudo reboot
-&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-!install nordvpn:
-&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
-sudo apt-get install openvpn
-&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-! Configure service status:
-Very useful if you want to check if a service is running. Or you want to force start/stop a service. Sometimes a service is masked, so there is not way for you to monitor or configure it. Then an unmasking is in order. Remember that it's always a reason why a service that should be running, isn't. Sometimes you can figure out why by reading the logfiles.
-&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
-sudo systemctl status ExampleService
-
-sudo systemctl start ExampleService
-
-sudo systemctl stop ExampleService
-
-sudo systemctl restart ExampleService
-
-sudo systemctl unmask ExampleService
-
-sudo systemctl mask ExampleService
-
-sudo systemctl enable ExampleService
-
-sudo systemctl unenable ExampleService
-&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</pre>
-</div>
-<div created="20200317103012896" creator="nome" modified="20200317103920162" modifier="nome" tags="WebUI [[Raspberry PI]]" title="WebUI's">
-<pre>! RaspAP WebUI
-* http://NetworkDefaultIp
-
-! Transmission WebUI 
-* IpOfRaspberry:9091
-* localhost:9091
-
-! Plex WebUI
-* IpOfRaspberry:32400 
-* localhost:32400
-
-! Cacti WebUI
-* IpOfRaspberry:8080/cacti
-* localhost:8080/cacti
-
-! Monitorix WebUI
-* IpOfRaspberry:8080/monitorix
-* IpOfRaspberry:YourPort/monitorix
-* localhost:8080/monitorix</pre>
 </div>
 
 </div>
