@@ -227,6 +227,8 @@ Error message and password prompt
 
 <li>$:/state/toc/TableOfContents/Raspberry Pi-Monitorix--118161433</li>
 
+<li>$:/state/toc/TableOfContents/Raspberry Pi-Pi Samba Server--118161433</li>
+
 <li>$:/state/toc/TableOfContents/Raspberry PI-RaspAP--118161433</li>
 
 <li>$:/state/toc/TableOfContents/Raspberry Pi-RaspAP--118161433</li>
@@ -260,6 +262,8 @@ Error message and password prompt
 <li>$:/themes/tiddlywiki/vanilla</li>
 
 <li>Configure Monitorix</li>
+
+<li>Configure Pi Samba Server</li>
 
 <li>Dataplicity</li>
 
@@ -9606,8 +9610,8 @@ TableOfContents</pre>
 <div created="20200315223542805" modified="20200315223640797" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/All</pre>
 </div>
-<div created="20200306200828532" creator="computor" modified="20200403213107400" modifier="nome" title="$:/state/tab/sidebar--595412856">
-<pre>TableOfContents</pre>
+<div created="20200306200828532" creator="computor" modified="20200404110823747" modifier="nome" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Open</pre>
 </div>
 <div created="20200316091414324" creator="Nome" modified="20200316091417556" modifier="Nome" title="$:/state/toc/Raspberry PI-RaspAP--1840672247">
 <pre>close</pre>
@@ -9645,6 +9649,9 @@ TableOfContents</pre>
 <div created="20200403180037027" creator="nome" modified="20200403180037027" modifier="nome" title="$:/state/toc/TableOfContents/Raspberry Pi-Monitorix--118161433">
 <pre>open</pre>
 </div>
+<div created="20200404100458374" creator="nome" modified="20200404100458374" modifier="nome" title="$:/state/toc/TableOfContents/Raspberry Pi-Pi Samba Server--118161433">
+<pre>open</pre>
+</div>
 <div created="20200315225826016" modified="20200315225826016" title="$:/state/toc/TableOfContents/Raspberry PI-RaspAP--118161433">
 <pre>open</pre>
 </div>
@@ -9675,7 +9682,7 @@ TableOfContents</pre>
 <div created="20200316091151741" creator="n" modified="20200318111535317" modifier="nom" title="$:/status/UserName">
 <pre>nome</pre>
 </div>
-<div created="20200403175201691" creator="nome" list="" modified="20200403213555023" modifier="nome" title="$:/StoryList">
+<div created="20200403175201691" creator="nome" list="" modified="20200404110831861" modifier="nome" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9736,7 +9743,7 @@ TableOfContents</pre>
     }
 }</pre>
 </div>
-<div created="20200306200607168" creator="Nome" modified="20200316091218064" modifier="Nome" title="$:/temp/search">
+<div created="20200306200607168" creator="Nome" modified="20200404105421380" modifier="nome" title="$:/temp/search">
 <pre></pre>
 </div>
 <div created="20200307071131288" creator="computor" modified="20200316190632677" modifier="computor" title="$:/theme">
@@ -9884,7 +9891,22 @@ TableOfContents</pre>
 
 </pre>
 </div>
-<div created="20200403173358230" creator="nome" modified="20200403213601143" modifier="nome" tags="[[Raspberry Pi]]" title="Dataplicity">
+<div created="20200404105450047" creator="nome" modified="20200404110833442" modifier="nome" tags="Configuration [[Pi Samba Server]]" title="Configure Pi Samba Server">
+<pre>! Configure multiple network drives
+To add network drives, simply edit the config file with an additional location. 
+
+Example:
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+[pi4_ssd_1tb]
+path = /mtn/ssd_1tb
+writeable=Yes
+create mask=0777
+directory mask=0777
+public=no
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</pre>
+</div>
+<div created="20200403173358230" creator="nome" modified="20200404100519823" modifier="nome" tags="[[Raspberry Pi]]" title="Dataplicity">
 <pre>! What is Dataplicity?
 Dataplicity is a way for you to access your pi anywhere from your browser. You install a program on your pi which is linked with your dataplicity account, so that you can tunnel into your pi. If you use a headless install, are configuring VPN services, or need access to your pi on the go, I would suggest that Dataplicity is mandatory.
 
@@ -9894,7 +9916,7 @@ Dataplicity is a way for you to access your pi anywhere from your browser. You i
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20200318103310194" creator="computor" modified="20200318150638845" modifier="nome" tags="[[Rally and racing]]" title="Dirt Rally 2">
+<div created="20200318103310194" creator="computor" modified="20200404110820472" modifier="nome" tags="[[Rally and racing]]" title="Dirt Rally 2">
 <pre>Dirt Rally 2's FoV slider start in the middle of the bar at 0, and goes to ± 5. Where &quot;-&quot; denotes going to the left on the bar, and &quot;+&quot; to the right. 
 
 Example:
@@ -9977,7 +9999,7 @@ So far I've not got it to work, SO AWAY PATIENTLY FOR UPDATE!
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20200403180058192" creator="nome" modified="20200403183702787" modifier="nome" tags="VPN [[Raspberry Pi]]" title="NordVPN">
+<div created="20200403180058192" creator="nome" modified="20200404105138052" modifier="nome" tags="VPN [[Raspberry Pi]]" title="NordVPN">
 <pre>! What is NordVPN?
 NordVPN is a VPN service which you need a paid membership for. It has easy to configure features like: 
 
@@ -9997,14 +10019,14 @@ There are ways to circumvent this, which is explained in &quot;Circumvent SSH bl
 &lt;/div&gt;
 ! NOT FINISHED</pre>
 </div>
-<div created="20200403213147109" creator="nome" modified="20200403213712118" modifier="nome" tags="TableOfContents SMB" title="Pi Samba Server">
+<div created="20200403213147109" creator="nome" modified="20200404100556599" modifier="nome" tags="[[Raspberry Pi]] SMB" title="Pi Samba Server">
 <pre>! What is a Pi Samba Server?
 
-A Pi Samba Server will allow Linux systems to integrate seamlessly into the Windows directory system. This means that you can setup HDDs, SSDs, NAS systems etc. connected to your pi and make them accessable on your network for any device using linux or windows.
+A Pi Samba Server will allow Linux systems to integrate seamlessly into the Windows directory system. This means that you can set up HDDs, SSDs, NAS systems etc. connected to your pi and make them accessible on your network for any device using Linux or windows.
 
 &lt;div class=&quot;tc-table-of-contents&quot;&gt;
 
-&lt;&lt;toc-selective-expandable 'Samba Server'&gt;&gt;
+&lt;&lt;toc-selective-expandable 'Pi Samba Server'&gt;&gt;
 
 &lt;/div&gt;</pre>
 </div>
@@ -10037,41 +10059,47 @@ RaspAP essentialy makes it possible to host your own wireless network. Acting as
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20200307071142064" creator="Nome" modified="20200403174633384" modifier="nome" tags="TableOfContents" title="Raspberry Pi" type="text/vnd.tiddlywiki">
+<div created="20200307071142064" creator="Nome" modified="20200404110558857" modifier="nome" tags="TableOfContents" title="Raspberry Pi" type="text/vnd.tiddlywiki">
 <pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
 
-&lt;&lt;toc-selective-expandable 'Raspberry PI'&gt;&gt;
+&lt;&lt;toc-selective-expandable 'Raspberry Pi'&gt;&gt;
 
 &lt;/div&gt;
 
-!update:
+! Update:
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+sudo apt-get update
 
-    sudo apt-get update
-    sudo apt-get upgrade
+sudo apt-get upgrade
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-!check internet:
+! Check internet:
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+sudo ifconfig
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-    ifconfig
+! Ssh to raspberry:
 
-!ssh to raspberry:
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+ssh pi@PiIP# on LAN
 
-    ssh pi@ipofraspberry# on LAN
-    ssh pi@805.something # over inter
+ssh pi@PublicPiIP # over internet, needs port 22 open for ssh connection
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-!reboot:
-    sudo reboot
+! Reboot:
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+sudo reboot
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-!install nordvpn:
-    sudo apt-get install openvpn
+! Transmission WebUI: 
+ipofraspberry:9091
 
-!transmission WebUI: ipofraspberry:9091
-	username: username
-	password: password
+username: username
 
-!plex: 
-    ipofraspberry:32400
-!ssh to pi: 
-    pi@ipofraspberry</pre>
+password: password
+
+! Plex: 
+ipofraspberry:32400</pre>
 </div>
 <div created="20200325185239933" creator="nome" modified="20200403174549759" modifier="nome" tags="[[Raspberry Pi]]" title="Raspbian">
 <pre>! What is Raspbian?
@@ -10083,14 +10111,14 @@ Raspbian is the default OS on the Raspberry Pi.
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20200403174133967" creator="nome" modified="20200403181110890" modifier="nome" tags="Dataplicity Setup" title="Setup Dataplicity">
+<div created="20200403174133967" creator="nome" modified="20200404105032566" modifier="nome" tags="Installation Dataplicity Setup" title="Setup Dataplicity">
 <pre>! Installing Dataplicity
 * Make an account on Dataplicity: https://www.dataplicity.com
 * Press the &quot;add new device&quot; button.
 * Copy the command line text into your Pi's terminal.
 * After installation you should be able to access your pi via your browser using your Dataplicity account.</pre>
 </div>
-<div created="20200316163308807" creator="Nome" modified="20200316223512838" modifier="computor" tags="Setup Monitorix" title="Setup Monitorix">
+<div created="20200316163308807" creator="Nome" modified="20200404102731085" modifier="nome" tags="Setup Monitorix" title="Setup Monitorix">
 <pre>!Installation:
 * Via repository:
 &lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
@@ -10111,11 +10139,62 @@ sudo dpkg -i monitorix*.deb
 
 Head on over to localhost:8080 or localhost:YOURPORT, depending on if you changed port, and you're good to go.</pre>
 </div>
-<div created="20200403213651383" creator="nome" modified="20200403213816857" modifier="nome" tags="Setup [[Pi Samba Server]]" title="Setup Pi Samba Server">
-<pre>At this time I will refer to this link for setup:
-https://pimylifeup.com/raspberry-pi-samba/</pre>
+<div created="20200403213651383" creator="nome" modified="20200404110830411" modifier="nome" tags="Installation Setup [[Pi Samba Server]]" title="Setup Pi Samba Server">
+<pre>! Installation
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+sudo apt-get update
+
+sudo apt-get upgrade
+
+sudo apt-get install samba samba-common-bin
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+! Setup
+
+!! Choose or make a folder to share
+
+If you want to make a new directory:
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+sudo mkdir /YOURDIRECTORY
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+Example:
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+sudo mkdir /mnt/ext_500gb
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+!! Make the folder shared
+
+Open the config file:
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+sudo nano /etc/samba/smb.config
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+Write the following at the bottom, replace title and path with yours:
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+[ext_500gb]
+path = /mtn/ext_500gb
+writeable=Yes
+create mask=0777
+directory mask=0777
+public=no
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+!! Make a Samba username and password
+To make a username, write the following below in the terminal. Note that 'pi' denotes the username in this case. If you want something else, change it.
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+sudo smbpasswd -a pi
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+You will be prompted to type a password and confirm it.
+
+!! Done! Now it should be accessible from on your network! 
+
+! References:
+* https://pimylifeup.com/raspberry-pi-samba/</pre>
 </div>
-<div created="20200315225809462" creator="Nome" modified="20200325191137143" modifier="nome" tags="Setup RaspAP" title="Setup RaspAP">
+<div created="20200315225809462" creator="Nome" modified="20200404105046216" modifier="nome" tags="Installation Setup RaspAP" title="Setup RaspAP">
 <pre>!Setup RaspAP:
 This will first install hostapd and dnsmasq. These processes will then need to be stopped before we go ahead and configure them. We will start the configuration by opening nano.
 &lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
@@ -10194,7 +10273,7 @@ auto br0 iface br0 inet manual bridge_ports eth0 wlan0
 
 Close nano. Now you will have to reboot. </pre>
 </div>
-<div created="20200325185454983" creator="nome" modified="20200403181052181" modifier="nome" tags="Setup Raspbian" title="Setup Raspbian">
+<div created="20200325185454983" creator="nome" modified="20200404105234876" modifier="nome" tags="Setup Raspbian" title="Setup Raspbian">
 <pre>! NB! Read the whole guide before starting. 
 
 ! Pick a version
@@ -10233,7 +10312,7 @@ psk=&quot;your_wifi_password&quot;
 After inserting the SD card in the Pi. Give it a little time to set everything up. Depending on what Raspberry Pi you have, what version of Raspbian you chose, and what equipment you have accessible. There are different ways to access your Pi after the initial setup. 
 
 !! Headless setup
-You are supposed to be able to use &quot;raspberrypi&quot; or &quot;raspberrypi.local&quot; as an &quot;IP&quot; address for the Pi on your network. This doesn't always work, but you can try. If this doesn't work, you need to locate your Pi's IP address. The easiest way to do this, is to access your router and see which IP your Pi has. Remember that your Pi is under Ethernet/Wi-Fi connections, depending on which way you chose to connect it with.
+You are supposed to be able to use &quot;raspberrypi&quot; or &quot;raspberrypi.local&quot; as an &quot;IP&quot; address for the Pi on your network. This doesn't always work, but you can try. If this doesn't work, you need to locate your Pi's IP address. The easiest way to do this, is to access your router and see which IP your Pi has. Remember that your Pi is under Ethernet/Wi-Fi connections, depending on which way you choose to connect it with.
 
 &lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
 sudo ssh pi@raspberrypi
