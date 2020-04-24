@@ -301,6 +301,8 @@ Error message and password prompt
 
 <li>Hvor ting er</li>
 
+<li>Manjaro</li>
+
 <li>Monitorix</li>
 
 <li>NordVPN</li>
@@ -316,6 +318,8 @@ Error message and password prompt
 <li>Raspbian</li>
 
 <li>Setup Dataplicity</li>
+
+<li>Setup Manjaro</li>
 
 <li>Setup Monitorix</li>
 
@@ -336,6 +340,8 @@ Error message and password prompt
 <li>Troubleshooting Monitorix</li>
 
 <li>Troubleshooting RaspAP</li>
+
+<li>Unix</li>
 
 </ul>
 </p>
@@ -9640,8 +9646,8 @@ TableOfContents</pre>
 <div created="20200406120544633" creator="nome" modified="20200406120545824" modifier="nome" title="$:/state/toc/Raspberry Pi-Raspbian--1676687799">
 <pre>close</pre>
 </div>
-<div created="20200318103253580" creator="computor" modified="20200406161429145" modifier="nome" title="$:/state/toc/TableOfContents-Gaming--118161433">
-<pre>close</pre>
+<div created="20200318103253580" creator="computor" modified="20200424153433199" modifier="nome" title="$:/state/toc/TableOfContents-Gaming--118161433">
+<pre>open</pre>
 </div>
 <div created="20200406120605027" creator="nome" modified="20200406120605920" modifier="nome" title="$:/state/toc/TableOfContents-Helpful contributions from others--118161433">
 <pre>close</pre>
@@ -9649,8 +9655,8 @@ TableOfContents</pre>
 <div created="20200406161418412" creator="nome" modified="20200406161419098" modifier="nome" title="$:/state/toc/TableOfContents-Helpful contributions from others-497309061">
 <pre>close</pre>
 </div>
-<div created="20200403181035308" creator="nome" modified="20200406120609987" modifier="nome" title="$:/state/toc/TableOfContents-How to make a Tiddler--118161433">
-<pre>close</pre>
+<div created="20200403181035308" creator="nome" modified="20200424153430225" modifier="nome" title="$:/state/toc/TableOfContents-How to make a Tiddler--118161433">
+<pre>open</pre>
 </div>
 <div created="20200406161420427" creator="nome" modified="20200406161420855" modifier="nome" title="$:/state/toc/TableOfContents-How to make a Tiddler-497309061">
 <pre>close</pre>
@@ -9715,7 +9721,7 @@ TableOfContents</pre>
 <div created="20200316091151741" creator="n" modified="20200318111535317" modifier="nom" title="$:/status/UserName">
 <pre>nome</pre>
 </div>
-<div created="20200424143145602" creator="nome" list="[[How to make a Tiddler]] [[Hvor ting er]] $:/ControlPanel [[Hello there!]] TableOfContents" modified="20200424143207079" modifier="nome" title="$:/StoryList">
+<div created="20200424143145602" creator="nome" list="[[Raspberry Pi]] Dataplicity [[Setup Dataplicity]] [[Setup Manjaro]] Manjaro Unix" modified="20200424154349894" modifier="nome" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9939,7 +9945,7 @@ directory mask=0777
 public=no
 &quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</pre>
 </div>
-<div created="20200403173358230" creator="nome" modified="20200404100519823" modifier="nome" tags="[[Raspberry Pi]]" title="Dataplicity">
+<div created="20200403173358230" creator="nome" modified="20200424153519594" modifier="nome" tags="[[Raspberry Pi]]" title="Dataplicity">
 <pre>! What is Dataplicity?
 Dataplicity is a way for you to access your pi anywhere from your browser. You install a program on your pi which is linked with your dataplicity account, so that you can tunnel into your pi. If you use a headless install, are configuring VPN services, or need access to your pi on the go, I would suggest that Dataplicity is mandatory.
 
@@ -10057,6 +10063,15 @@ I sprekka i sofaen.
 !Gutta:
 På badet.
 </pre>
+</div>
+<div created="20200424153535308" creator="nome" modified="20200424155018861" modifier="nome" tags="Unix" title="Manjaro">
+<pre>! What is Manjaro?
+
+&lt;div class=&quot;tc-table-of-contents&quot;&gt;
+
+&lt;&lt;toc-selective-expandable 'Manjaro'&gt;&gt;
+
+&lt;/div&gt;</pre>
 </div>
 <div created="20200316163015618" creator="Nome" modified="20200404111129528" modifier="nome" tags="[[Raspberry Pi]]" title="Monitorix" type="text/vnd.tiddlywiki">
 <pre>!What is Monitorix?
@@ -10188,6 +10203,16 @@ Raspbian is the default OS on the Raspberry Pi.
 * Press the &quot;add new device&quot; button.
 * Copy the command line text into your Pi's terminal.
 * After installation you should be able to access your pi via your browser using your Dataplicity account.</pre>
+</div>
+<div created="20200424153616579" creator="nome" modified="20200424154919707" modifier="nome" tags="Setup Manjaro" title="Setup Manjaro">
+<pre>! Installation
+
+* Download Manjaro KDE Plasma: https://manjaro.org/download/
+* Burn image to USB using Belena Ethcher: https://www.balena.io/etcher/?ref=etcher_footer
+* Boot and configure boot by pressing 'E' on boot option.
+* Locate 'quiet' in config under 'setparams'.
+* Replace 'quiet' with &quot;acpi_osi='Windows 2018'&quot; Hit 'F10' to start booting.
+</pre>
 </div>
 <div created="20200316163308807" creator="Nome" modified="20200404102731085" modifier="nome" tags="Setup Monitorix" title="Setup Monitorix">
 <pre>!Installation:
@@ -10468,6 +10493,13 @@ sudo systemctl start dnsmasq
 &quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 Remember google is your friend, sometimes a restart fixes things aswell!</pre>
+</div>
+<div created="20200424153435245" creator="nome" modified="20200424155018859" modifier="nome" tags="TableOfContents" title="Unix">
+<pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
+
+&lt;&lt;toc-selective-expandable 'Unix'&gt;&gt;
+
+&lt;/div&gt;</pre>
 </div>
 
 </div>
