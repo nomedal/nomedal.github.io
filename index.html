@@ -283,6 +283,8 @@ Error message and password prompt
 
 <li>Draft of 'New Tiddler' by nome</li>
 
+<li>Dropbox</li>
+
 <li>F1 2019</li>
 
 <li>FoV</li>
@@ -302,6 +304,8 @@ Error message and password prompt
 <li>Hvor ting er</li>
 
 <li>Manjaro</li>
+
+<li>Manjaro Packages</li>
 
 <li>Monitorix</li>
 
@@ -9610,7 +9614,7 @@ TableOfContents</pre>
 <div created="20200315222745494" modified="20200315222745494" title="$:/state/image-picker/system--1365487189">
 <pre>show</pre>
 </div>
-<div created="20200406120639603" creator="nome" modified="20200406120642304" modifier="nome" title="$:/state/sidebar">
+<div created="20200406120639603" creator="nome" modified="20200424162817029" modifier="nome" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20200315200841093" creator="computor" modified="20200316190616171" modifier="computor" title="$:/state/tab--1963855381">
@@ -9721,7 +9725,7 @@ TableOfContents</pre>
 <div created="20200316091151741" creator="n" modified="20200318111535317" modifier="nom" title="$:/status/UserName">
 <pre>nome</pre>
 </div>
-<div created="20200424143145602" creator="nome" list="[[Raspberry Pi]] Dataplicity [[Setup Dataplicity]] [[Setup Manjaro]] Manjaro Unix" modified="20200424154349894" modifier="nome" title="$:/StoryList">
+<div created="20200424143145602" creator="nome" list="" modified="20200424155859264" modifier="nome" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9930,7 +9934,7 @@ TableOfContents</pre>
 
 </pre>
 </div>
-<div created="20200404105450047" creator="nome" modified="20200404110833442" modifier="nome" tags="Configuration [[Pi Samba Server]]" title="Configure Pi Samba Server">
+<div created="20200404105450047" creator="nome" modified="20200424160220827" modifier="nome" tags="Configuration [[Pi Samba Server]]" title="Configure Pi Samba Server">
 <pre>! Configure multiple network drives
 To add network drives, simply edit the config file with an additional location. 
 
@@ -9945,7 +9949,7 @@ directory mask=0777
 public=no
 &quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</pre>
 </div>
-<div created="20200403173358230" creator="nome" modified="20200424153519594" modifier="nome" tags="[[Raspberry Pi]]" title="Dataplicity">
+<div created="20200403173358230" creator="nome" modified="20200424160225579" modifier="nome" tags="[[Raspberry Pi]]" title="Dataplicity">
 <pre>! What is Dataplicity?
 Dataplicity is a way for you to access your pi anywhere from your browser. You install a program on your pi which is linked with your dataplicity account, so that you can tunnel into your pi. If you use a headless install, are configuring VPN services, or need access to your pi on the go, I would suggest that Dataplicity is mandatory.
 
@@ -9967,6 +9971,18 @@ Example:
 </div>
 <div modified="20200404114055024" modifier="nome" title="Draft of 'New Tiddler' by nome">
 <pre></pre>
+</div>
+<div created="20200424160018299" creator="nome" modified="20200424160244499" modifier="nome" tags="[[Manjaro Packages]]" title="Dropbox">
+<pre>! Installation
+https://www.dropbox.com/install?os=lnx
+
+! Configuration
+Locate dropbox.py.
+If you don't have this, download it from https://www.dropbox.com/install?os=lnx. 
+It doesn't matter where you put this file, but it should be located in your '~' dir. 
+This way you can run it from your default dir.
+
+</pre>
 </div>
 <div created="20200403175328287" creator="nome" modified="20200404114420784" modifier="nome" tags="Competitive [[Rally and Racing]]" title="F1 2019">
 <pre>F1 2019 allows for a lot of customization regarding view. But the most important setting is still the FoV slider. In contrast to Dirt Rally 2's FoV slider, F1 2019 gives you an actual number when you move the slider. 
@@ -10070,6 +10086,25 @@ På badet.
 &lt;div class=&quot;tc-table-of-contents&quot;&gt;
 
 &lt;&lt;toc-selective-expandable 'Manjaro'&gt;&gt;
+
+&lt;/div&gt;</pre>
+</div>
+<div created="20200424155649017" creator="nome" modified="20200424160301490" modifier="nome" tags="[[Setup Manjaro]]" title="Manjaro Packages">
+<pre>In general when you want to install something you have to download a package and build them. First make a directory for your builds e.g -/builds in your home directory.
+Cd into this directory, then:
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+git clone https://aur.archlinux.org/PACKAGENAME
+
+cd PACKAGENAME/
+
+makepgk -sri
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+! Packages:
+&lt;div class=&quot;tc-table-of-contents&quot;&gt;
+
+&lt;&lt;toc-selective-expandable 'Manjaro Packages'&gt;&gt;
 
 &lt;/div&gt;</pre>
 </div>
@@ -10197,22 +10232,20 @@ Raspbian is the default OS on the Raspberry Pi.
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20200403174133967" creator="nome" modified="20200404105032566" modifier="nome" tags="Installation Dataplicity Setup" title="Setup Dataplicity">
+<div created="20200403174133967" creator="nome" modified="20200424160227354" modifier="nome" tags="Installation Dataplicity Setup" title="Setup Dataplicity">
 <pre>! Installing Dataplicity
 * Make an account on Dataplicity: https://www.dataplicity.com
 * Press the &quot;add new device&quot; button.
 * Copy the command line text into your Pi's terminal.
 * After installation you should be able to access your pi via your browser using your Dataplicity account.</pre>
 </div>
-<div created="20200424153616579" creator="nome" modified="20200424154919707" modifier="nome" tags="Setup Manjaro" title="Setup Manjaro">
-<pre>! Installation
+<div created="20200424153616579" creator="nome" modified="20200424155645894" modifier="nome" tags="Installation Setup Manjaro" title="Setup Manjaro">
+<pre>! Installation:
+&lt;div class=&quot;tc-table-of-contents&quot;&gt;
 
-* Download Manjaro KDE Plasma: https://manjaro.org/download/
-* Burn image to USB using Belena Ethcher: https://www.balena.io/etcher/?ref=etcher_footer
-* Boot and configure boot by pressing 'E' on boot option.
-* Locate 'quiet' in config under 'setparams'.
-* Replace 'quiet' with &quot;acpi_osi='Windows 2018'&quot; Hit 'F10' to start booting.
-</pre>
+&lt;&lt;toc-selective-expandable 'Manjaro'&gt;&gt;
+
+&lt;/div&gt;</pre>
 </div>
 <div created="20200316163308807" creator="Nome" modified="20200404102731085" modifier="nome" tags="Setup Monitorix" title="Setup Monitorix">
 <pre>!Installation:
