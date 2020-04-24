@@ -251,6 +251,8 @@ Error message and password prompt
 
 <li>$:/state/toc/TableOfContents/Raspberry Pi-Raspbian-497309061</li>
 
+<li>$:/state/toc/Unix-Manjaro--522000997</li>
+
 <li>$:/state/tree/$:/GitHub/</li>
 
 <li>$:/state/tree/$:/GitLab/</li>
@@ -304,6 +306,8 @@ Error message and password prompt
 <li>Hvor ting er</li>
 
 <li>Manjaro</li>
+
+<li>Manjaro OS</li>
 
 <li>Manjaro Packages</li>
 
@@ -9641,7 +9645,7 @@ TableOfContents</pre>
 <div created="20200315223542805" modified="20200315223640797" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/All</pre>
 </div>
-<div created="20200306200828532" creator="computor" modified="20200424163002938" modifier="nome" title="$:/state/tab/sidebar--595412856">
+<div created="20200306200828532" creator="computor" modified="20200424211359116" modifier="nome" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Open</pre>
 </div>
 <div created="20200316091414324" creator="Nome" modified="20200316091417556" modifier="Nome" title="$:/state/toc/Raspberry PI-RaspAP--1840672247">
@@ -9713,6 +9717,9 @@ TableOfContents</pre>
 <div created="20200325201008456" creator="nome" modified="20200325201009336" modifier="nome" title="$:/state/toc/TableOfContents/Raspberry Pi-Raspbian-497309061">
 <pre>close</pre>
 </div>
+<div created="20200424211242825" creator="nome" modified="20200424211245758" modifier="nome" title="$:/state/toc/Unix-Manjaro--522000997">
+<pre>open</pre>
+</div>
 <div created="20200315223607241" modified="20200315223607241" title="$:/state/tree/$:/GitHub/">
 <pre>show</pre>
 </div>
@@ -9725,7 +9732,7 @@ TableOfContents</pre>
 <div created="20200316091151741" creator="n" modified="20200318111535317" modifier="nom" title="$:/status/UserName">
 <pre>nome</pre>
 </div>
-<div created="20200424143145602" creator="nome" list="" modified="20200424162953306" modifier="nome" title="$:/StoryList">
+<div created="20200424211025483" creator="nome" list="[[Manjaro OS]]" modified="20200424211301321" modifier="nome" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -10088,6 +10095,21 @@ På badet.
 &lt;&lt;toc-selective-expandable 'Manjaro'&gt;&gt;
 
 &lt;/div&gt;</pre>
+</div>
+<div created="20200424211403444" creator="nome" modified="20200424212120071" modifier="nome" tags="OS [[Setup Manjaro]]" title="Manjaro OS">
+<pre>! Installation
+
+* Download Manjaro KDE Plasma: https://manjaro.org/download/
+* Burn to USB using Balena Etcher: https://www.balena.io/etcher/
+* On install, choose &quot;erase disk&quot; to do a clean install, note that all data on disk will be lost. 
+* Choose swap with hibernation to access hibernation. The swap size is set automaticly, but shouldn't be lower than your max RAM size. 
+
+! Fix freeze on boot
+Sometimes the install freezez on boot. 
+
+* Boot and configure boot by pressing 'e' on boot option.
+* Locate 'quiet' in config under 'setparams'.
+* Replace 'quiet' with &quot;acpi_osi='Windows 2018'&quot; Hit 'F10' to start booting.</pre>
 </div>
 <div created="20200424155649017" creator="nome" modified="20200424160301490" modifier="nome" tags="[[Setup Manjaro]]" title="Manjaro Packages">
 <pre>In general when you want to install something you have to download a package and build them. First make a directory for your builds e.g -/builds in your home directory.
