@@ -253,6 +253,8 @@ Error message and password prompt
 
 <li>$:/state/toc/Unix-Manjaro--522000997</li>
 
+<li>$:/state/toc/Unix/Manjaro-Setup Manjaro--522000997</li>
+
 <li>$:/state/tree/$:/GitHub/</li>
 
 <li>$:/state/tree/$:/GitLab/</li>
@@ -315,6 +317,8 @@ Error message and password prompt
 
 <li>NordVPN</li>
 
+<li>PCI passthrough via OVMF</li>
+
 <li>Pi Samba Server</li>
 
 <li>Rally and Racing</li>
@@ -330,6 +334,8 @@ Error message and password prompt
 <li>Setup Manjaro</li>
 
 <li>Setup Monitorix</li>
+
+<li>Setup PCI passthrough</li>
 
 <li>Setup Pi Samba Server</li>
 
@@ -9645,8 +9651,8 @@ TableOfContents</pre>
 <div created="20200315223542805" modified="20200315223640797" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/All</pre>
 </div>
-<div created="20200306200828532" creator="computor" modified="20200424211359116" modifier="nome" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Open</pre>
+<div created="20200306200828532" creator="computor" modified="20200425130139216" modifier="nome" title="$:/state/tab/sidebar--595412856">
+<pre>TableOfContents</pre>
 </div>
 <div created="20200316091414324" creator="Nome" modified="20200316091417556" modifier="Nome" title="$:/state/toc/Raspberry PI-RaspAP--1840672247">
 <pre>close</pre>
@@ -9720,6 +9726,9 @@ TableOfContents</pre>
 <div created="20200424211242825" creator="nome" modified="20200424211245758" modifier="nome" title="$:/state/toc/Unix-Manjaro--522000997">
 <pre>open</pre>
 </div>
+<div created="20200425124955217" creator="nome" modified="20200425125004331" modifier="nome" title="$:/state/toc/Unix/Manjaro-Setup Manjaro--522000997">
+<pre>open</pre>
+</div>
 <div created="20200315223607241" modified="20200315223607241" title="$:/state/tree/$:/GitHub/">
 <pre>show</pre>
 </div>
@@ -9732,7 +9741,7 @@ TableOfContents</pre>
 <div created="20200316091151741" creator="n" modified="20200318111535317" modifier="nom" title="$:/status/UserName">
 <pre>nome</pre>
 </div>
-<div created="20200424211025483" creator="nome" list="[[Manjaro OS]]" modified="20200424211301321" modifier="nome" title="$:/StoryList">
+<div created="20200425082358108" creator="nome" list="[[Setup PCI passthrough]] [[PCI passthrough via OVMF]] [[Hello there!]] TableOfContents Unix Manjaro [[Setup Manjaro]] [[Manjaro OS]]" modified="20200425130142342" modifier="nome" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -10096,7 +10105,7 @@ På badet.
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20200424211403444" creator="nome" modified="20200424212120071" modifier="nome" tags="OS [[Setup Manjaro]]" title="Manjaro OS">
+<div created="20200424211403444" creator="nome" modified="20200425124520082" modifier="nome" tags="OS [[Setup Manjaro]]" title="Manjaro OS">
 <pre>! Installation
 
 * Download Manjaro KDE Plasma: https://manjaro.org/download/
@@ -10160,6 +10169,18 @@ There are ways to circumvent this, which is explained in &quot;Circumvent SSH bl
 
 &lt;/div&gt;
 ! NOT FINISHED</pre>
+</div>
+<div created="20200425124521839" creator="nome" modified="20200425125044621" modifier="nome" tags="Manjaro" title="PCI passthrough via OVMF">
+<pre>! What is PCI passthrough?
+PCi passthrough is basicly lending PCI components away. In this case it is via OVMF(open virtual machine firmware), which is a project for virtual machines. The goal of this setup is to use linux to virtualize windows and then lending CPU, GPU, RAM, mouse and keyboard to it. This way we can run an encasulated windows 10 session for gaming and then just quit it when we are done. 
+
+If we have a very nice virtualized windows setup, and want to do some risky configurations. We can just copy it to a backup and make the configs with NO risks. 
+
+&lt;div class=&quot;tc-table-of-contents&quot;&gt;
+
+&lt;&lt;toc-selective-expandable 'PCI passthrough via OVMF'&gt;&gt;
+
+&lt;/div&gt;</pre>
 </div>
 <div created="20200403213147109" creator="nome" modified="20200404100556599" modifier="nome" tags="[[Raspberry Pi]] SMB" title="Pi Samba Server">
 <pre>! What is a Pi Samba Server?
@@ -10289,6 +10310,50 @@ sudo dpkg -i monitorix*.deb
 &quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 Head on over to localhost:8080 or localhost:YOURPORT, depending on if you changed port, and you're good to go.</pre>
+</div>
+<div created="20200425125045780" creator="nome" modified="20200425130835266" modifier="nome" tags="[[PCI passthrough via OVMF]]" title="Setup PCI passthrough">
+<pre>! Check compatability
+The first thing we need to do, is to check if we have a compatible motherboard, GPU and CPU for this project. 
+
+* The CPU and motherboard can be checked here: https://en.wikipedia.org/wiki/List_of_IOMMU-supporting_hardware
+
+* The GPU can be checked here, if you find it on the list, you're good: https://www.techpowerup.com/vgabios/
+
+! Enabling IOMMU:
+!! Enable IOMMU in bios
+To enable iommu, the first thing we need to do is to enable the cpu virtualization tech in BIOS. This differ depending what motherboard and CPU you have. But it's quite common that you first have to find something along the line of &quot;Virtualization techonology&quot; in bios and enable that. And the find 'VT-d' for intel or 'AMD-Vi' for amd, and enable that too. If there is anything else in bios in the terms of these two, enable them too. 
+
+! Enable IOMMU in grub
+Type:
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+sudo nano /etc/default/grub
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+Find 'quiet' and add &quot;intel_iommu=on&quot; after it. You can optionally add &quot;iommu=pt&quot; to prevent Linux from touching devices which cnanot be passed through. 
+
+To check if IOMMU in grub is enabled:
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+sudo dmesg | grep -i -e DMAR -e IOMMU
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+If you find something in the terms of &quot;DMAR: IOMMU enabled&quot;, you're good.
+
+!! Ensuring the groups are valid
+To ensure you have enabled the virtualization tech on your CPU and motherboard, and that they iommu groups are valid, copy and paste this into your terminal, do not change format on paste:
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;&lt;$text text=&quot;&quot;&quot;
+shopt -s nullglob
+for g in /sys/kernel/iommu_groups/*; do
+    echo &quot;IOMMU Group ${g##*/}:&quot;
+    for d in $g/devices/*; do
+        echo -e &quot;\t$(lspci -nns ${d##*/})&quot;
+    done;
+done;
+&quot;&quot;&quot;/&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+If you get NO output, this is a sign of an unenabled virtualization tech. Troubleshoot and make sure it's enabled. 
+</pre>
 </div>
 <div created="20200403213651383" creator="nome" modified="20200404110830411" modifier="nome" tags="Installation Setup [[Pi Samba Server]]" title="Setup Pi Samba Server">
 <pre>! Installation
@@ -10424,7 +10489,7 @@ auto br0 iface br0 inet manual bridge_ports eth0 wlan0
 
 Close nano. Now you will have to reboot. </pre>
 </div>
-<div created="20200325185454983" creator="nome" modified="20200406164804635" modifier="nome" tags="Setup Raspbian" title="Setup Raspbian">
+<div created="20200325185454983" creator="nome" modified="20200425130158650" modifier="nome" tags="Setup Raspbian" title="Setup Raspbian">
 <pre>! NB! Read the whole guide before starting. 
 
 ! Pick a version
@@ -10478,7 +10543,7 @@ The password is &quot;raspberry&quot; as default.</pre>
 <div created="20200403180224993" creator="nome" modified="20200403180410012" modifier="nome" tags="" title="Setup Transmission">
 <pre>! NOT FINISHED</pre>
 </div>
-<div caption="Contents" created="20200315221215340" list="[[Hello there!]] [[Raspberry Pi]] [[Hvor ting er]" list-after="$:/core/ui/SideBar/Open" modified="20200325185358743" modifier="nome" tags="$:/tags/SideBar" title="TableOfContents" type="text/vnd.tiddlywiki">
+<div caption="Contents" created="20200315221215340" creator="nome" list="[[Hello there!]] [[Raspberry Pi]] [[Hvor ting er]" list-after="$:/core/ui/SideBar/Open" modified="20200425124948525" modifier="nome" tags="$:/tags/SideBar" title="TableOfContents" type="text/vnd.tiddlywiki">
 <pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
 
 &lt;&lt;toc-selective-expandable 'TableOfContents'&gt;&gt;
