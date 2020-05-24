@@ -149,6 +149,8 @@ Error message and password prompt
 
 <li>$:/config/RelinkOnRename</li>
 
+<li>$:/ControlPanel</li>
+
 <li>$:/core</li>
 
 <li>$:/DefaultTiddlers</li>
@@ -172,6 +174,8 @@ Error message and password prompt
 <li>$:/GitLab/ServerURL</li>
 
 <li>$:/GitLab/Username</li>
+
+<li>$:/Import</li>
 
 <li>$:/isEncrypted</li>
 
@@ -392,6 +396,12 @@ Error message and password prompt
 </div>
 <div created="20200315223500469" modified="20200315223500469" title="$:/config/RelinkOnRename">
 <pre>yes</pre>
+</div>
+<div color="#bbb" created="20200524195455531" creator="Hellemo" icon="$:/core/images/options-button" modified="20200524195455531" modifier="Hellemo" title="$:/ControlPanel">
+<pre>&lt;div class=&quot;tc-control-panel&quot;&gt;
+&lt;&lt;tabs &quot;[all[shadows+tiddlers]tag[$:/tags/ControlPanel]!has[draft.of]]&quot; &quot;$:/core/ui/ControlPanel/Info&quot;&gt;&gt;
+&lt;/div&gt;
+</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.21">
 <pre>{
@@ -9620,6 +9630,16 @@ TableOfContents</pre>
 <div created="20200315200100556" modified="20200315200433320" title="$:/GitLab/Username">
 <pre></pre>
 </div>
+<div plugin-type="import" status="pending" title="$:/Import" type="application/json">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;Untitled&quot;: {
+            &quot;title&quot;: &quot;Untitled&quot;,
+            &quot;text&quot;: &quot;&lt;div class=\&quot;tc-tiddler-title\&quot; style=\&quot;box-sizing: border-box; color: rgb(179, 179, 179); font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;\&quot;&gt;&lt;div class=\&quot;tc-titlebar\&quot; style=\&quot;box-sizing: border-box; font-weight: 300; font-size: 2.35em; line-height: 1.2em; color: rgb(255, 192, 76); margin: 0px; overflow: hidden;\&quot;&gt;&lt;span style=\&quot;box-sizing: border-box;\&quot;&gt;&lt;span class=\&quot;tc-tiddler-title-icon\&quot; style=\&quot;box-sizing: border-box; vertical-align: middle; fill: rgb(187, 187, 187);\&quot;&gt;&lt;span&gt; &lt;/span&gt;&lt;/span&gt;&lt;h2 class=\&quot;tc-title\&quot; title=\&quot;This is a system tiddler\&quot; style=\&quot;box-sizing: border-box; line-height: 1.2; font-weight: 300; font-size: 1em; display: inline;\&quot;&gt;&lt;span class=\&quot;tc-system-title-prefix\&quot; style=\&quot;box-sizing: border-box; color: rgb(255, 255, 255);\&quot;&gt;$:/&lt;/span&gt;ControlPanel&lt;/h2&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=\&quot; tc-reveal\&quot; style=\&quot;box-sizing: border-box; color: rgb(179, 179, 179); font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;\&quot;&gt;&lt;br class=\&quot;Apple-interchange-newline\&quot;&gt;&quot;
+        }
+    }
+}</pre>
+</div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
@@ -9656,8 +9676,8 @@ TableOfContents</pre>
 <div created="20200315223635654" modified="20200315223635654" title="$:/state/tab-1163638994">
 <pre>$:/core/ui/MoreSideBar/Plugins/Languages</pre>
 </div>
-<div created="20200315200056609" creator="Nome" modified="20200424143201304" modifier="nome" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Saving</pre>
+<div created="20200315200056609" creator="Nome" modified="20200524195439214" modifier="nome" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Info</pre>
 </div>
 <div created="20200315200059039" creator="nome" modified="20200524194538757" modifier="nome" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/General</pre>
@@ -9767,10 +9787,10 @@ TableOfContents</pre>
 <div created="20200315223626785" modified="20200315223626785" title="$:/state/tree/$:/themes/">
 <pre>show</pre>
 </div>
-<div created="20200316091151741" creator="n" modified="20200318111535317" modifier="nom" title="$:/status/UserName">
-<pre>nome</pre>
+<div created="20200316091151741" creator="n" modified="20200524195443651" modifier="Hellem" title="$:/status/UserName">
+<pre>Hellemo</pre>
 </div>
-<div created="20200524194403095" creator="nome" list="[[Raspberry Pi]] [[10GbE for cheap]] Monitorix123 $:/ControlPanel [[Hello there!]] TableOfContents" modified="20200524195312019" modifier="nome" title="$:/StoryList">
+<div created="20200524194403095" creator="nome" list="[[10GbE for cheap]] [[Hello there!]] TableOfContents" modified="20200524195312019" modifier="nome" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9946,7 +9966,7 @@ TableOfContents</pre>
     }
 }</pre>
 </div>
-<div created="20200524194736540" creator="nome" modified="20200524195343544" modifier="nome" tags="TableOfContents 10GbE" title="10GbE for cheap">
+<div created="20200524194736540" creator="nome" modified="20200524195503272" modifier="Hellemo" tags="TableOfContents 10GbE" title="10GbE for cheap">
 <pre>''Optical SFP+ cables:'' https://www.amazon.com/gp/product/B07DP79LFN/
 
 ''SFP+ Transceiver: ''https://www.amazon.com/dp/B00U8Q7946/
